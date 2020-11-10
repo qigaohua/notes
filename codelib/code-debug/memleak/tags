@@ -1,0 +1,77 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADVANCE	memleak.c	165;"	d	file:
+CHK_ALL	memleak.c	133;"	d	file:
+CHK_ALL	memleak.h	43;"	d
+CHK_ALLOC	memleak.c	132;"	d	file:
+CHK_ALLOC	memleak.h	42;"	d
+CHK_FREED	memleak.c	131;"	d	file:
+CHK_FREED	memleak.h	41;"	d
+FILE_LINE	memleak.h	59;"	d
+HLEN	memleak.c	141;"	d	file:
+H_MEMLEAK_H	memleak.h	32;"	d
+add	memleak.c	/^static struct head *add(void *buf, size_t s)$/;"	f	file:
+addr	memleak.c	/^	void *addr;$/;"	m	struct:head	file:
+calloc	memleak.h	62;"	d
+calloc_cnt	memleak.c	/^	static int calloc_cnt = 0;$/;"	v	file:
+dbg_abort	memleak.c	/^void dbg_abort(char *msg)$/;"	f
+dbg_abort	memleak.h	69;"	d
+dbg_calloc	memleak.c	/^void *dbg_calloc(size_t n, size_t s)$/;"	f
+dbg_catch_sigsegv	memleak.c	/^void dbg_catch_sigsegv(void)$/;"	f
+dbg_catch_sigsegv	memleak.h	72;"	d
+dbg_check_addr	memleak.c	/^int dbg_check_addr(char *msg, void *addr, int opt)$/;"	f
+dbg_check_addr	memleak.h	66;"	d
+dbg_file_name	memleak.c	/^	char *dbg_file_name;$/;"	v
+dbg_free	memleak.c	/^void dbg_free(void *buf)$/;"	f
+dbg_heap_dump	memleak.c	/^void dbg_heap_dump(char *key)$/;"	f
+dbg_heap_dump	memleak.h	70;"	d
+dbg_history_dump	memleak.c	/^void dbg_history_dump(char *key)$/;"	f
+dbg_history_dump	memleak.h	71;"	d
+dbg_init	memleak.c	/^void dbg_init(int hist_len)$/;"	f
+dbg_init	memleak.h	65;"	d
+dbg_line_number	memleak.c	/^	unsigned long dbg_line_number;$/;"	v
+dbg_malloc	memleak.c	/^void *dbg_malloc(size_t s)$/;"	f
+dbg_mem_stat	memleak.c	/^void dbg_mem_stat(void)$/;"	f
+dbg_mem_stat	memleak.h	67;"	d
+dbg_realloc	memleak.c	/^void *dbg_realloc(void *buf, size_t s)$/;"	f
+dbg_strdup	memleak.c	/^char *dbg_strdup(const char *str)$/;"	f
+dbg_strndup	memleak.c	/^char *dbg_strndup(const char *str, size_t n)$/;"	f
+dbg_zero_stat	memleak.c	/^void dbg_zero_stat(void)$/;"	f
+dbg_zero_stat	memleak.h	68;"	d
+del	memleak.c	/^static void del(struct head *p)$/;"	f	file:
+die	memleak.c	104;"	d	file:
+file	memleak.c	/^		struct { char *file; unsigned long line; } free;$/;"	m	struct:head::__anon1::__anon3	file:
+file	memleak.c	/^	char *file;$/;"	m	struct:head	file:
+find_in_heap	memleak.c	/^static struct head *find_in_heap(void *addr)$/;"	f	file:
+find_in_hist	memleak.c	/^static struct head *find_in_hist(void *addr)$/;"	f	file:
+first	memleak.c	/^static struct head *first = NULL, *last = NULL;$/;"	v	typeref:struct:head	file:
+free	memleak.c	/^		struct { char *file; unsigned long line; } free;$/;"	m	union:head::__anon1	typeref:struct:head::__anon1::__anon3	file:
+free	memleak.h	63;"	d
+free_cnt	memleak.c	/^	static int free_cnt = 0;$/;"	v	file:
+head	memleak.c	/^	struct head$/;"	s	file:
+hist_base	memleak.c	/^static struct head *hist_base = NULL, *histp = NULL;$/;"	v	typeref:struct:head	file:
+history_length	memleak.c	/^	static unsigned history_length = 0;$/;"	v	file:
+histp	memleak.c	/^static struct head *hist_base = NULL, *histp = NULL;$/;"	v	typeref:struct:	file:
+in	memleak.c	/^	} in;$/;"	m	struct:head	typeref:union:head::__anon1	file:
+last	memleak.c	/^static struct head *first = NULL, *last = NULL;$/;"	v	typeref:struct:	file:
+length	memleak.c	105;"	d	file:
+line	memleak.c	/^		struct { char *file; unsigned long line; } free;$/;"	m	struct:head::__anon1::__anon3	file:
+line	memleak.c	/^	unsigned long line;$/;"	m	struct:head	file:
+list	memleak.c	/^		struct { struct head *prev, *next; } list;$/;"	m	union:head::__anon1	typeref:struct:head::__anon1::__anon2	file:
+main	test.c	/^int main()  $/;"	f
+malloc	memleak.h	60;"	d
+malloc_cnt	memleak.c	/^	static int malloc_cnt = 0;$/;"	v	file:
+memory_cnt	memleak.c	/^	static long memory_cnt = 0;$/;"	v	file:
+next	memleak.c	/^		struct { struct head *prev, *next; } list;$/;"	m	struct:head::__anon1::__anon2	typeref:struct:head::__anon1::__anon2::	file:
+prev	memleak.c	/^		struct { struct head *prev, *next; } list;$/;"	m	struct:head::__anon1::__anon2	typeref:struct:head::__anon1::__anon2::head	file:
+realloc	memleak.h	61;"	d
+realloc_cnt	memleak.c	/^	static int realloc_cnt = 0;$/;"	v	file:
+replace	memleak.c	/^static void replace(struct head *p, void *buf, size_t s)$/;"	f	file:
+sigsegv_handler	memleak.c	/^static void sigsegv_handler(int signal)$/;"	f	file:
+size	memleak.c	/^	size_t size;$/;"	m	struct:head	file:
+strdup	memleak.h	82;"	d
+strndup	memleak.h	83;"	d

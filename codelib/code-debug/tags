@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AVRO_CURRENT_ERROR	errors.c	/^    char  *AVRO_CURRENT_ERROR;$/;"	m	struct:avro_error_data_t	file:
+AVRO_ERROR1	errors.c	/^    char  AVRO_ERROR1[AVRO_ERROR_SIZE];$/;"	m	struct:avro_error_data_t	file:
+AVRO_ERROR2	errors.c	/^    char  AVRO_ERROR2[AVRO_ERROR_SIZE];$/;"	m	struct:avro_error_data_t	file:
+AVRO_ERRORS_H	errors.h	19;"	d
+AVRO_ERROR_SIZE	errors.c	37;"	d	file:
+AVRO_OTHER_ERROR	errors.c	/^    char  *AVRO_OTHER_ERROR;$/;"	m	struct:avro_error_data_t	file:
+CLOSE_EXTERN	errors.h	22;"	d
+CLOSE_EXTERN	errors.h	24;"	d
+avro_error_data_t	errors.c	/^struct avro_error_data_t {$/;"	s	file:
+avro_get_error_data	errors.c	/^avro_get_error_data(void)$/;"	f	file:
+avro_prefix_error	errors.c	/^avro_prefix_error(const char *fmt, ...)$/;"	f
+avro_set_error	errors.c	/^avro_set_error(const char *fmt, ...)$/;"	f
+avro_strerror	errors.c	/^const char *avro_strerror(void)$/;"	f
+error_data_key	errors.c	/^static pthread_key_t error_data_key;$/;"	v	file:
+error_data_key_once	errors.c	/^static pthread_once_t error_data_key_once = PTHREAD_ONCE_INIT;$/;"	v	file:
+make_error_data_key	errors.c	/^static void make_error_data_key()$/;"	f	file:
