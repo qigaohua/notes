@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DNS_FILE	queue.h	/^} DNS_FILE;$/;"	t	typeref:struct:__dns_file__
+MAX_RING_CAPACITY	queue.h	10;"	d
+RING_QUEUE	queue.h	/^}RING_QUEUE;$/;"	t	typeref:struct:ring_queue
+__QUEUE_H__	queue.h	2;"	d
+__dns_file__	queue.h	/^typedef struct __dns_file__ {$/;"	s
+__is_queue_empty__	queue.c	/^int __is_queue_empty__(RING_QUEUE *ring)$/;"	f
+dequeue	queue.c	/^int dequeue(RING_QUEUE *ring, DNS_FILE *item)$/;"	f
+dns_file	queue.h	/^    char dns_file[1024];$/;"	m	struct:__dns_file__
+enqueue	queue.c	/^int enqueue(RING_QUEUE *ring, DNS_FILE item)$/;"	f
+front	queue.h	/^    int front;$/;"	m	struct:ring_queue
+init_queue	queue.c	/^int init_queue(RING_QUEUE *ring)$/;"	f
+is_queue_empty	queue.c	/^int is_queue_empty(RING_QUEUE *ring)$/;"	f
+is_queue_full	queue.c	/^int is_queue_full(RING_QUEUE *ring)$/;"	f
+q_lock	queue.h	/^    pthread_mutex_t q_lock;$/;"	m	struct:ring_queue
+rear	queue.h	/^    int rear;$/;"	m	struct:ring_queue
+ring_array	queue.h	/^    DNS_FILE ring_array[MAX_RING_CAPACITY];$/;"	m	struct:ring_queue
+ring_queue	queue.h	/^typedef struct ring_queue{$/;"	s

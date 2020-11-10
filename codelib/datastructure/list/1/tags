@@ -1,0 +1,63 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+LIST_F_ALLOCATED	list.h	50;"	d
+LIST_F_NOTGROWS	list.h	53;"	d
+LIST_F_SORTED	list.h	51;"	d
+LIST_F_UNIQUE	list.h	52;"	d
+TEST	list.c	335;"	d	file:
+UNUSED	list.h	26;"	d
+_GHLIST_H	list.h	2;"	d
+a	list.c	/^    int a;$/;"	m	struct:st	file:
+b	list.c	/^    double b;$/;"	m	struct:st	file:
+c	list.c	/^    char *c;$/;"	m	struct:st	file:
+cb_free	list.h	/^	func cb_free;$/;"	m	struct:list_s
+check_param	list.h	33;"	d
+elems	list.h	/^	void **elems;$/;"	m	struct:list_s
+find_num	list.c	/^int find_num = 0;$/;"	v
+func	list.h	/^typedef void (*func)(void*);$/;"	t
+gh_cnt	list.h	/^	int32_t gh_cnt;$/;"	m	struct:list_s
+gh_flags	list.h	/^    uint32_t gh_flags;$/;"	m	struct:list_s
+gh_free	list.h	57;"	d
+gh_malloc	list.h	/^static __inline void* gh_malloc(size_t size)$/;"	f
+gh_realloc	list.h	/^static __inline void* gh_realloc(void *ptr, size_t size)$/;"	f
+gh_size	list.h	/^	int32_t gh_size;$/;"	m	struct:list_s
+likely	list.h	20;"	d
+list_FOREACH	list.h	41;"	d
+list_add	list.c	/^int32_t list_add (list_t *gl, void *elem)$/;"	f
+list_add_noduplicate	list.c	/^int32_t list_add_noduplicate (list_t *gl, void *elem,$/;"	f
+list_clear	list.c	/^void __inline list_clear (list_t *gl)$/;"	f
+list_cmp_curr	list.c	/^int (*list_cmp_curr) (const void *, const void *);$/;"	v	file:
+list_cmp_trampoline	list.c	/^int list_cmp_trampoline (const void *_a, const void *_b) {$/;"	f	file:
+list_cnt	list.c	/^int32_t __inline list_cnt (list_t *gl)$/;"	f
+list_copy	list.c	/^list_t* list_copy (list_t *src,$/;"	f
+list_copy_to	list.c	/^int32_t list_copy_to (list_t *dst, list_t *src,$/;"	f
+list_dump	list.c	/^void list_dump (const char *what, list_t *gl)$/;"	f
+list_elem	list.c	/^void*  list_elem (list_t *gl, int32_t i)$/;"	f
+list_empty	list.c	/^int32_t __inline list_empty (list_t *gl)$/;"	f
+list_find	list.c	/^void* list_find (list_t *gl, const void *elem,$/;"	f
+list_free	list.c	/^void list_free (list_t *gl)$/;"	f
+list_free_cb	list.c	/^void list_free_cb (list_t *gl, void *ptr)$/;"	f
+list_grow	list.c	/^int list_grow (list_t* gl, int32_t size)$/;"	f
+list_init	list.c	/^list_t* list_init (list_t *gl, int32_t size, func cb_free)$/;"	f
+list_multi_remove_cmp	list.c	/^int32_t list_multi_remove_cmp (list_t *gl, void *elem,$/;"	f
+list_new	list.c	/^list_t* list_new (int32_t size, func cb_free)$/;"	f
+list_onlycopy_ptr	list.c	/^void* list_onlycopy_ptr (void *s, void *mt)$/;"	f
+list_p	list.h	/^} list_t, *list_p;$/;"	t	typeref:struct:list_s
+list_remove	list.c	/^void* list_remove (list_t *gl, void *elem)$/;"	f
+list_remove_cmp	list.c	/^void* list_remove_cmp (list_t *gl, void *elem,$/;"	f
+list_remove_index	list.c	/^void* list_remove_index(list_t *gl, int32_t idx)$/;"	f
+list_s	list.h	/^typedef struct list_s {$/;"	s
+list_sort	list.c	/^int32_t list_sort (list_t *gl,$/;"	f
+list_t	list.h	/^} list_t, *list_p;$/;"	t	typeref:struct:list_s
+logerr	list.h	29;"	d
+main	list.c	/^int main(int argc, char **argv)$/;"	f
+st	list.c	/^struct st {$/;"	s	file:
+test_cmp	list.c	/^int32_t test_cmp(void *_a, void *_b) {$/;"	f
+test_cmp2	list.c	/^int32_t test_cmp2(const void *_a, const void *_b) {$/;"	f
+test_copy	list.c	/^void* test_copy(void* s, void* match)$/;"	f
+test_free	list.c	/^void test_free(void *ptr) {$/;"	f
+unlikely	list.h	23;"	d
