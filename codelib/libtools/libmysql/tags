@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DB_INFO	mysql_op.h	/^typedef struct db_info DB_INFO, *db_info_p;$/;"	t	typeref:struct:db_info
+MAX_SQL_SIZE	mysql_op.c	40;"	d	file:
+SQL_ERROR_INFO	mysql_op.h	14;"	d
+SQL_ERROR_INFO_EXIT	mysql_op.h	7;"	d
+SQL_LOGG_INFO	mysql_op.h	21;"	d
+__MYSQLOP_H__	mysql_op.h	2;"	d
+db_host	mysql_op.h	/^    char db_host[64];$/;"	m	struct:db_info
+db_info	mysql_op.h	/^struct db_info {$/;"	s
+db_info_p	mysql_op.h	/^typedef struct db_info DB_INFO, *db_info_p;$/;"	t	typeref:struct:
+db_name	mysql_op.h	/^    char db_name[64];$/;"	m	struct:db_info
+db_passwd	mysql_op.h	/^    char db_passwd[64];$/;"	m	struct:db_info
+db_port	mysql_op.h	/^    uint16_t db_port;$/;"	m	struct:db_info
+db_username	mysql_op.h	/^    char db_username[64];$/;"	m	struct:db_info
+get_mysql_handle	mysql_op.c	/^MYSQL* get_mysql_handle(MYSQL **ppmysql, db_info_p db_conf)$/;"	f
+mysql_query_batch	mysql_op.c	/^int32_t mysql_query_batch (MYSQL *mysql, char **sql) $/;"	f
+mysql_query_store_res	mysql_op.c	/^MYSQL_RES* mysql_query_store_res (MYSQL *mysql, MYSQL_RES **res,  char *sql) $/;"	f
