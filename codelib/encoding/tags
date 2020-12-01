@@ -1,0 +1,12 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BASE64_SIZE_T_MAX	base64.c	86;"	d	file:
+__BASE64_H_	base64.h	2;"	d
+base64_dec_map	base64.c	/^static const unsigned char base64_dec_map[128] =$/;"	v	file:
+base64_decode	base64.c	/^int base64_decode( unsigned char *dst, size_t dlen, size_t *olen,$/;"	f
+base64_enc_map	base64.c	/^static const unsigned char base64_enc_map[64] =$/;"	v	file:
+base64_encode	base64.c	/^int base64_encode( unsigned char *dst, size_t dlen, size_t *olen,$/;"	f
