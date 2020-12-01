@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+LISTENQ	skt.c	223;"	d	file:
+MAX_ADDR_STRING	skt.c	25;"	d	file:
+MAX_RETRY_CNT	skt.c	27;"	d	file:
+MTU	skt.c	26;"	d	file:
+__SKT_H__	skt.h	2;"	d
+_skt_connect	skt.c	/^static int _skt_connect(const char *host, uint16_t port, int type)$/;"	f	file:
+get_mac_by_name	skt.c	/^static inline int get_mac_by_name(const char *device, unsigned char *buf)$/;"	f	file:
+ip_get_mask	skt.c	/^unsigned long ip_get_mask(unsigned long addr)$/;"	f
+main	test_server.c	/^int main(int argc, char *argv[])$/;"	f
+skt_addr_ntop	skt.c	/^int skt_addr_ntop(char *str, size_t size, uint32_t ip)$/;"	f
+skt_addr_pton	skt.c	/^uint32_t skt_addr_pton(const char *ip)$/;"	f
+skt_close	skt.c	/^void skt_close(int fd)$/;"	f
+skt_destory	skt.c	/^void skt_destory()$/;"	f
+skt_get_local_info	skt.c	/^int skt_get_local_info(void)$/;"	f
+skt_get_tcp_info	skt.c	/^int skt_get_tcp_info(int fd, struct tcp_info *tcpi)$/;"	f
+skt_open_tcpfd	skt.c	/^int skt_open_tcpfd(const char *host, uint16_t port)$/;"	f
+skt_open_udpfd	skt.c	/^int skt_open_udpfd(const char *host, uint16_t port)$/;"	f
+skt_openfd_of_hostname	skt.c	/^static int skt_openfd_of_hostname(const char *hostname, const char *port,$/;"	f	file:
+skt_recv	skt.c	/^int skt_recv(int fd, void *buf, size_t len)$/;"	f
+skt_recvfrom	skt.c	/^int skt_recvfrom(int fd, uint32_t *ip, uint16_t *port, void *buf, size_t len)$/;"	f
+skt_rio_readn	skt.c	/^ssize_t skt_rio_readn(int fd, void *buf, size_t n)$/;"	f
+skt_rio_writen	skt.c	/^ssize_t skt_rio_writen(int fd, void *buf, size_t n)$/;"	f
+skt_send	skt.c	/^int skt_send(int fd, const void *buf, size_t len)$/;"	f
+skt_send_sync_recv	skt.c	/^int skt_send_sync_recv(int fd, const void *sbuf, size_t slen,$/;"	f
+skt_sendto	skt.c	/^int skt_sendto(int fd, const char *ip, uint16_t port,$/;"	f
+skt_set_block	skt.c	/^int skt_set_block(int fd)$/;"	f
+skt_set_buflen	skt.c	/^int skt_set_buflen(int fd, int size)$/;"	f
+skt_set_noblk	skt.c	/^int skt_set_noblk(int fd, int enable)$/;"	f
+skt_set_nonblock	skt.c	/^int skt_set_nonblock(int fd)$/;"	f
+skt_set_reuse	skt.c	/^int skt_set_reuse(int fd, int enable)$/;"	f
+skt_set_tcp_keepalive	skt.c	/^int skt_set_tcp_keepalive(int fd, int enable)$/;"	f
+skt_tcp_connect	skt.c	/^int skt_tcp_connect(const char *host, uint16_t port)$/;"	f
+skt_udp_connect	skt.c	/^int skt_udp_connect(const char *host, uint16_t port)$/;"	f
+str_is_ip	skt.c	/^static inline int str_is_ip(const char *str, int str_len)$/;"	f	file:
