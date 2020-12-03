@@ -10,10 +10,12 @@
 extern struct ipc_ops mq_posix_ops;
 extern struct ipc_ops mq_sysv_ops;
 extern struct ipc_ops unix_socket_ops;
+extern struct ipc_ops shm_ops;
 
 // #define MQ_SYSV_OP
-#define MQ_POSIX_OP
-// #define UNIX_SOCKET_OP
+// #define MQ_POSIX_OP
+#define SHM_OP
+//#define UNIX_SOCKET_OP
 
 int client(struct ipc_ops *ops, const char *name, int role)
 {
@@ -34,6 +36,7 @@ int client(struct ipc_ops *ops, const char *name, int role)
             printf("read msg: %s\n", rbuf);
         if (++i > 15)
             break;
+        sleep(3);
     }
 
 #ifndef MQ_SYSV_OP
@@ -76,11 +79,12 @@ int server(struct ipc_ops *ops, const char *name, int role)
             printf("write ok %d !!!\n", i);
         if (++i > 15)
             break;
+        sleep(3);
     }
-    sleep(10);
+    sleep(5);
 
     ops->close(fd);
-#ifdef MQ_POSIX_OP
+#if (defined MQ_POSIX_OP) || (defined SHM_OP)
     ops->unlink(name);
 #endif
 
@@ -94,6 +98,8 @@ int main(int argc, char *argv[])
     struct ipc_ops *ops = &mq_posix_ops;
 #elif defined(MQ_SYSV_OP)
     struct ipc_ops *ops = &mq_sysv_ops;
+#elif defined(SHM_OP)
+    struct ipc_ops *ops = &shm_ops;
 #else
     struct ipc_ops *ops = &unix_socket_ops;
 #endif
