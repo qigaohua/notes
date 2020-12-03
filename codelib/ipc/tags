@@ -1,0 +1,61 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CHECK_ARGS	mq_posix.c	16;"	d	file:
+CHECK_ARGS	mq_sysv.c	18;"	d	file:
+CHECK_ARGS	unix_socket.c	22;"	d	file:
+IPC_CLIENT	unix_socket.c	29;"	d	file:
+IPC_MAX_MSG	mq_posix.c	25;"	d	file:
+IPC_MAX_MSGSIZE	mq_posix.c	26;"	d	file:
+IPC_MQ_POSIX_PREFIX	mq_posix.c	22;"	d	file:
+IPC_MTU	unix_socket.c	33;"	d	file:
+IPC_SERVER	unix_socket.c	30;"	d	file:
+IPC_UNIX_SOCKET_PATH	unix_socket.c	28;"	d	file:
+IPC_WQ_POSIX_PRIO	mq_posix.c	28;"	d	file:
+MQ_SYSV_OP	test.c	12;"	d	file:
+TEST_WRITE_STRING	test.c	45;"	d	file:
+_IPC_H	ipc.h	2;"	d
+accept	ipc.h	/^    int     (*accept)(int, struct sockaddr *, socklen_t *);$/;"	m	struct:ipc_ops
+buf	mq_sysv.c	/^    char buf[0];$/;"	m	struct:mq_sysv_data	file:
+client	test.c	/^int client(struct ipc_ops *ops, const char *name, int role)$/;"	f
+close	ipc.h	/^    int     (*close)(int);$/;"	m	struct:ipc_ops
+ipc_ops	ipc.h	/^struct ipc_ops {$/;"	s
+logw	mq_posix.c	13;"	d	file:
+logw	mq_sysv.c	15;"	d	file:
+logw	unix_socket.c	19;"	d	file:
+main	test.c	/^int main(int argc, char *argv[])$/;"	f
+mq_msg_t	mq_sysv.c	/^} mq_msg_t;$/;"	t	typeref:struct:mq_sysv_data	file:
+mq_notify_cb	mq_posix.c	/^typedef void (*mq_notify_cb)(union sigval);$/;"	t	file:
+mq_notify_update	mq_posix.c	/^int mq_notify_update(mqd_t mqd, mq_notify_cb func, void *args)$/;"	f
+mq_posix_close	mq_posix.c	/^static int mq_posix_close(mqd_t mqd)$/;"	f	file:
+mq_posix_open	mq_posix.c	/^static mqd_t mq_posix_open(const char *mq_name, int role)$/;"	f	file:
+mq_posix_ops	mq_posix.c	/^struct ipc_ops mq_posix_ops = {$/;"	v	typeref:struct:ipc_ops
+mq_posix_recv	mq_posix.c	/^static ssize_t mq_posix_recv(mqd_t mqd, void *buf, size_t len)$/;"	f	file:
+mq_posix_send	mq_posix.c	/^static ssize_t mq_posix_send(mqd_t mqd, void *buf, size_t len)$/;"	f	file:
+mq_posix_setattr	mq_posix.c	/^static int mq_posix_setattr(mqd_t mqd, struct mq_attr *attr)$/;"	f	file:
+mq_posix_setblock	mq_posix.c	/^static int mq_posix_setblock(mqd_t mqd, int on)$/;"	f	file:
+mq_posix_unlink	mq_posix.c	/^static int mq_posix_unlink(const char *mq_name)$/;"	f	file:
+mq_sysv_close	mq_sysv.c	/^static int mq_sysv_close(int msgid)$/;"	f	file:
+mq_sysv_data	mq_sysv.c	/^typedef struct mq_sysv_data {$/;"	s	file:
+mq_sysv_open	mq_sysv.c	/^static int mq_sysv_open(const char *mq_name, int role)$/;"	f	file:
+mq_sysv_ops	mq_sysv.c	/^struct ipc_ops mq_sysv_ops = {$/;"	v	typeref:struct:ipc_ops
+mq_sysv_ops	unix_socket.c	/^struct ipc_ops mq_sysv_ops = {$/;"	v	typeref:struct:ipc_ops
+mq_sysv_recv	mq_sysv.c	/^static ssize_t mq_sysv_recv(int msgid, void *buf, size_t len)$/;"	f	file:
+mq_sysv_send	mq_sysv.c	/^static ssize_t mq_sysv_send(int msgid, void *buf, size_t len)$/;"	f	file:
+mq_sysv_unlink	mq_sysv.c	/^static int mq_sysv_unlink(const char *name)$/;"	f	file:
+msg_type	mq_sysv.c	/^    int msg_type;$/;"	m	struct:mq_sysv_data	file:
+open	ipc.h	/^    int     (*open)(const char *, int);$/;"	m	struct:ipc_ops
+read	ipc.h	/^    ssize_t (*read)(int, void *, size_t);$/;"	m	struct:ipc_ops
+server	test.c	/^int server(struct ipc_ops *ops, const char *name, int role)$/;"	f
+setblock	ipc.h	/^    int     (*setblock)(int, int);$/;"	m	struct:ipc_ops
+unix_socket_accept	unix_socket.c	/^static int unix_socket_accept(int fd, struct sockaddr *addr, socklen_t *addrlen)$/;"	f	file:
+unix_socket_close	unix_socket.c	/^static int unix_socket_close(int fd)$/;"	f	file:
+unix_socket_open	unix_socket.c	/^static int unix_socket_open(const char *name, int role)$/;"	f	file:
+unix_socket_recv	unix_socket.c	/^static ssize_t unix_socket_recv(int fd, void *buf, size_t len)$/;"	f	file:
+unix_socket_send	unix_socket.c	/^static ssize_t unix_socket_send(int fd, void *buf, size_t len)$/;"	f	file:
+unix_socket_setblock	unix_socket.c	/^static int unix_socket_setblock(int fd, int on)$/;"	f	file:
+unlink	ipc.h	/^    int     (*unlink)(const char *);$/;"	m	struct:ipc_ops
+write	ipc.h	/^    ssize_t (*write)(int, void *, size_t);$/;"	m	struct:ipc_ops
