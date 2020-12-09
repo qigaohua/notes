@@ -4,33 +4,61 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS := -g -W -O$/;"	m
 CHECK_ARGS	mq_posix.c	16;"	d	file:
 CHECK_ARGS	mq_sysv.c	18;"	d	file:
-CHECK_ARGS	shm.c	17;"	d	file:
+CHECK_ARGS	netlink.c	20;"	d	file:
+CHECK_ARGS	sem.c	17;"	d	file:
+CHECK_ARGS	shm.c	26;"	d	file:
 CHECK_ARGS	unix_socket.c	22;"	d	file:
 IPC_CLIENT	unix_socket.c	29;"	d	file:
 IPC_MAX_MSG	mq_posix.c	25;"	d	file:
 IPC_MAX_MSGSIZE	mq_posix.c	26;"	d	file:
 IPC_MQ_POSIX_PREFIX	mq_posix.c	22;"	d	file:
 IPC_MTU	unix_socket.c	33;"	d	file:
+IPC_NETLINK_BUFF_SIZE	netlink.c	26;"	d	file:
 IPC_SERVER	unix_socket.c	30;"	d	file:
-IPC_SHARM_DEFAULT_SIZE	shm.c	23;"	d	file:
-IPC_SHARM_SIZE_MAX	shm.c	24;"	d	file:
+IPC_SHARM_DEFAULT_SIZE	shm.c	32;"	d	file:
+IPC_SHARM_SIZE_MAX	shm.c	33;"	d	file:
 IPC_UNIX_SOCKET_PATH	unix_socket.c	28;"	d	file:
 IPC_WQ_POSIX_PRIO	mq_posix.c	28;"	d	file:
+KERNELDIR	1/Makefile	/^KERNELDIR ?= \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+LIBS	Makefile	/^LIBS :=$/;"	m
+MODULE_NAME	1/Makefile	/^MODULE_NAME :=netlink_test$/;"	m
+MSG_LEN	1/netlink_test.c	17;"	d	file:
+MSG_LEN	netlink_driver.c	17;"	d	file:
+NETLINK_TEST	1/netlink_test.c	16;"	d	file:
+NETLINK_TEST	netlink_driver.c	16;"	d	file:
+OBJ	Makefile	/^OBJ := $(patsubst %.c, %.o, $(SRC))$/;"	m
+PWD	1/Makefile	/^PWD := $(shell pwd)$/;"	m
 SHM_OP	test.c	17;"	d	file:
-TEST_WRITE_STRING	test.c	51;"	d	file:
+SRC	Makefile	/^SRC := $(wildcard *.c)$/;"	m
+TEST_WRITE_STRING	test.c	52;"	d	file:
+USER_PORT	1/netlink_test.c	18;"	d	file:
+USER_PORT	netlink_driver.c	18;"	d	file:
 _IPC_H	ipc.h	2;"	d
 accept	ipc.h	/^    int     (*accept)(int, struct sockaddr *, socklen_t *);$/;"	m	struct:ipc_ops
+arry	sem.c	/^    unsigned short *arry;$/;"	m	union:semun	file:
 buf	mq_sysv.c	/^    char buf[0];$/;"	m	struct:mq_sysv_data	file:
+buf	sem.c	/^    struct semid_ds *buf;$/;"	m	union:semun	typeref:struct:semun::semid_ds	file:
+cfg	1/netlink_test.c	/^struct netlink_kernel_cfg cfg = {$/;"	v	typeref:struct:netlink_kernel_cfg
+cfg	netlink_driver.c	/^struct netlink_kernel_cfg cfg = {$/;"	v	typeref:struct:netlink_kernel_cfg
 client	test.c	/^int client(struct ipc_ops *ops, const char *name, int role)$/;"	f
 close	ipc.h	/^    int     (*close)(int);$/;"	m	struct:ipc_ops
 ipc_ops	ipc.h	/^struct ipc_ops {$/;"	s
+ipc_sem_p	sem.c	/^int ipc_sem_p(int semid)$/;"	f
+ipc_sem_v	sem.c	/^int ipc_sem_v(int semid)$/;"	f
+ipc_semdel	sem.c	/^void ipc_semdel(int semid)$/;"	f
+ipc_semget	sem.c	/^int ipc_semget(key_t key, int num_sems, int sem_flags)$/;"	f
+ipc_set_semvalue	sem.c	/^int ipc_set_semvalue(int semid, int value)$/;"	f
 ipc_shm	shm.c	/^typedef struct ipc_shm {$/;"	s	file:
 ipc_shm_t	shm.c	/^} ipc_shm_t;$/;"	t	typeref:struct:ipc_shm	file:
 logw	mq_posix.c	13;"	d	file:
 logw	mq_sysv.c	15;"	d	file:
-logw	shm.c	14;"	d	file:
+logw	netlink.c	17;"	d	file:
+logw	sem.c	14;"	d	file:
+logw	shm.c	23;"	d	file:
 logw	unix_socket.c	19;"	d	file:
 main	test.c	/^int main(int argc, char *argv[])$/;"	f
 mq_msg_t	mq_sysv.c	/^} mq_msg_t;$/;"	t	typeref:struct:mq_sysv_data	file:
@@ -52,9 +80,22 @@ mq_sysv_recv	mq_sysv.c	/^static ssize_t mq_sysv_recv(int msgid, void *buf, size_
 mq_sysv_send	mq_sysv.c	/^static ssize_t mq_sysv_send(int msgid, void *buf, size_t len)$/;"	f	file:
 mq_sysv_unlink	mq_sysv.c	/^static int mq_sysv_unlink(const char *name)$/;"	f	file:
 msg_type	mq_sysv.c	/^    int msg_type;$/;"	m	struct:mq_sysv_data	file:
+netlink_close	netlink.c	/^static int netlink_close(int fd)$/;"	f	file:
+netlink_open	netlink.c	/^static int netlink_open(const char *name)$/;"	f	file:
+netlink_rcv_msg	1/netlink_test.c	/^static void netlink_rcv_msg(struct sk_buff *skb)$/;"	f	file:
+netlink_rcv_msg	netlink_driver.c	/^static void netlink_rcv_msg(struct sk_buff *skb)$/;"	f	file:
+netlink_recv	netlink.c	/^static ssize_t netlink_recv(int fd, void *buf, size_t len)$/;"	f	file:
+netlink_send	netlink.c	/^static ssize_t netlink_send(int fd, void *buf, size_t len)$/;"	f	file:
+nlmsg_seq	netlink.c	/^static size_t nlmsg_seq ;$/;"	v	file:
+nlsk	1/netlink_test.c	/^struct sock *nlsk = NULL;$/;"	v	typeref:struct:sock
+nlsk	netlink_driver.c	/^struct sock *nlsk = NULL;$/;"	v	typeref:struct:sock
+obj-m	1/Makefile	/^obj-m :=$(MODULE_NAME).o$/;"	m
 open	ipc.h	/^    int     (*open)(const char *, int);$/;"	m	struct:ipc_ops
 read	ipc.h	/^    ssize_t (*read)(int, void *, size_t);$/;"	m	struct:ipc_ops
 readn	ipc.h	/^    ssize_t (*readn)(int, void *, size_t);$/;"	m	struct:ipc_ops
+semun	sem.c	/^union semun {$/;"	u	file:
+send_usrmsg	1/netlink_test.c	/^int send_usrmsg(char *pbuf, uint16_t len)$/;"	f
+send_usrmsg	netlink_driver.c	/^int send_usrmsg(char *pbuf, uint16_t len)$/;"	f
 server	test.c	/^int server(struct ipc_ops *ops, const char *name, int role)$/;"	f
 setblock	ipc.h	/^    int     (*setblock)(int, int);$/;"	m	struct:ipc_ops
 shm	shm.c	/^static ipc_shm_t shm[IPC_SHARM_SIZE_MAX];$/;"	v	file:
@@ -66,7 +107,15 @@ shm_ops	shm.c	/^struct ipc_ops shm_ops = {$/;"	v	typeref:struct:ipc_ops
 shm_recv	shm.c	/^static ssize_t shm_recv(int shmid, void *buf, size_t len)$/;"	f	file:
 shm_send	shm.c	/^static ssize_t shm_send(int shmid, void *buf, size_t len)$/;"	f	file:
 shm_unlink	shm.c	/^static int shm_unlink(const char *shm_name)$/;"	f	file:
-shmid	shm.c	/^    int shmid;$/;"	m	struct:ipc_shm	file:
+shmid	shm.c	/^    int  shmid;$/;"	m	struct:ipc_shm	file:
+test_netlink_exit	1/netlink_test.c	/^module_exit(test_netlink_exit);$/;"	v
+test_netlink_exit	1/netlink_test.c	/^void test_netlink_exit(void)$/;"	f
+test_netlink_exit	netlink_driver.c	/^module_exit(test_netlink_exit);$/;"	v
+test_netlink_exit	netlink_driver.c	/^void test_netlink_exit(void)$/;"	f
+test_netlink_init	1/netlink_test.c	/^int test_netlink_init(void)$/;"	f
+test_netlink_init	1/netlink_test.c	/^module_init(test_netlink_init);$/;"	v
+test_netlink_init	netlink_driver.c	/^int test_netlink_init(void)$/;"	f
+test_netlink_init	netlink_driver.c	/^module_init(test_netlink_init);$/;"	v
 unix_socket_accept	unix_socket.c	/^static int unix_socket_accept(int fd, struct sockaddr *addr, socklen_t *addrlen)$/;"	f	file:
 unix_socket_close	unix_socket.c	/^static int unix_socket_close(int fd)$/;"	f	file:
 unix_socket_open	unix_socket.c	/^static int unix_socket_open(const char *name, int role)$/;"	f	file:
@@ -77,5 +126,6 @@ unix_socket_send	unix_socket.c	/^static ssize_t unix_socket_send(int fd, void *b
 unix_socket_sendn	unix_socket.c	/^static ssize_t unix_socket_sendn(int fd, void *buf, size_t len)$/;"	f	file:
 unix_socket_setblock	unix_socket.c	/^static int unix_socket_setblock(int fd, int on)$/;"	f	file:
 unlink	ipc.h	/^    int     (*unlink)(const char *);$/;"	m	struct:ipc_ops
+val	sem.c	/^    int val;$/;"	m	union:semun	file:
 write	ipc.h	/^    ssize_t (*write)(int, void *, size_t);$/;"	m	struct:ipc_ops
 writen	ipc.h	/^    ssize_t (*writen)(int, void *, size_t);$/;"	m	struct:ipc_ops
