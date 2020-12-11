@@ -238,13 +238,63 @@ void dump(FILE * out, const char *addr, const long len)
 	fflush(out);
 }
 
+//////////////////////////////////////////////////////////////
+
+
+// 8  url: https://blog.csdn.net/qigaohua/article/details/111029670
+#include <errno.h>
+
+/* 基于 nanosleep 的 毫秒级封装 */
+void m_sleep(unsigned int milliseconds)
+{
+    struct timespec ts = {
+        .tv_sec = milliseconds / 1000,
+        .tv_nsec = (milliseconds % 1000) * 1000000
+    };
+
+    while((-1 == nanosleep(&ts, &ts)) && EINTR == errno);
+}
 
 
 
+/* 基于 nanosleep 的 微妙级封装 */
+void u_sleep(unsigned int microseconds)
+{
+    struct timespec ts = {
+        .tv_sec = microseconds / 1000000,
+        .tv_nsec = (microseconds % 1000000) * 1000
+    };
+
+    while ((-1 == nanosleep(&ts, &ts)) && EINTR == errno);
+}
 
 
+void u_sleep2(unsigned int microseconds)
+{
+    struct timeval tv = {
+        .tv_sec = microseconds / 1000000,
+        .tv_usec = microseconds % 1000000
+    };
 
+    select(0, NULL, NULL, NULL, &tv);
+}
 
+///////////////////////////////////////////////////////////////////////
 
+#if 1
+int main(int argc, char *argv[])
+{
+    printf("test m_sleep\n");
+    m_sleep(5000);
+
+    printf("test u_sleep\n");
+    u_sleep(4000000);
+
+    printf("test u_sleep2\n");
+    u_sleep2(3000000);
+
+    return 0;
+}
+#endif
 
 
