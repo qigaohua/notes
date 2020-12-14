@@ -281,17 +281,77 @@ void u_sleep2(unsigned int microseconds)
 
 ///////////////////////////////////////////////////////////////////////
 
+
+// 9
+uint64_t rdstc()
+{
+    union {
+        uint64_t tsc_64;
+        struct {
+            uint32_t lo_32;
+            uint32_t hi_32;
+        };
+    } tsc;
+
+     asm volatile("rdtsc" :
+                "=a" (tsc.lo_32),
+                "=d" (tsc.hi_32));
+
+     return tsc.tsc_64;
+}
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+//10  获取cpu每秒周期数, cpu 频率
+uint64_t get_tsc_freq()
+{
+#define NS_PER_SEC  1E9   /* 1 sec */
+
+    uint64_t tsc_hz = 0;
+    struct timespec t_start, t_end;
+
+    struct timespec sleeptime = {.tv_nsec = NS_PER_SEC / 10 };
+
+    if (clock_gettime(CLOCK_MONOTONIC_RAW, &t_start) == 0) {
+        uint64_t end, start = rdstc();
+        nanosleep(&sleeptime, NULL);
+        clock_gettime(CLOCK_MONOTONIC_RAW, &t_end);
+        end = rdstc();
+
+
+        uint64_t ns = t_end.tv_nsec - t_start.tv_nsec;
+        ns += (t_end.tv_sec - t_start.tv_sec) * NS_PER_SEC;
+
+        double secs = (double) ns / NS_PER_SEC;
+        tsc_hz = (uint64_t)((end - start) / secs);
+    }
+    else
+        fprintf(stderr, "%s:%d Call clock_gettime() failed: %m", __FILE__,
+                __LINE__);
+
+    return tsc_hz;
+}
+
+
+/////////////////////////////////////////////////////////////////////
+
 #if 1
 int main(int argc, char *argv[])
 {
-    printf("test m_sleep\n");
-    m_sleep(5000);
+    // printf("test m_sleep\n");
+    // m_sleep(5000);
 
-    printf("test u_sleep\n");
-    u_sleep(4000000);
+    // printf("test u_sleep\n");
+    // u_sleep(4000000);
 
-    printf("test u_sleep2\n");
-    u_sleep2(3000000);
+    // printf("test u_sleep2\n");
+    // u_sleep2(3000000);
+
+
+    uint64_t freq = get_tsc_freq();
+    printf("freq: %lu\n", freq);
 
     return 0;
 }
