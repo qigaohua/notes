@@ -1,0 +1,41 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BKDRHash	hash.c	/^static unsigned int BKDRHash(const char *str, unsigned int tablesize)$/;"	f	file:
+DEBUG	hash.c	190;"	d	file:
+Delete	hash.h	/^enum status {Empty, Legitimate, Delete};$/;"	e	enum:status
+Empty	hash.h	/^enum status {Empty, Legitimate, Delete};$/;"	e	enum:status
+Error	hash.c	11;"	d	file:
+HASHTABLE_SIZE_MIN	hash.h	10;"	d
+HashTable	hash.h	/^typedef struct hashtable *HashTable;$/;"	t	typeref:struct:hashtable
+Legitimate	hash.h	/^enum status {Empty, Legitimate, Delete};$/;"	e	enum:status
+List	hash.h	/^typedef struct listnode *List;$/;"	t	typeref:struct:listnode
+NKEYS	hash.c	188;"	d	file:
+PALIGN	hash.c	187;"	d	file:
+Possion	hash.h	/^typedef struct listnode *Possion;$/;"	t	typeref:struct:listnode
+Warn	hash.c	14;"	d	file:
+__GG_HASH_H	hash.h	2;"	d
+element	hash.h	/^    void *element;$/;"	m	struct:listnode
+epoch_double	hash.c	/^static double epoch_double(void)$/;"	f	file:
+free_element	hash.h	/^    free_element_func free_element;$/;"	m	struct:hashtable
+free_element_func	hash.h	/^typedef void (*free_element_func)(void *);$/;"	t
+hash	hash.h	/^    hash_func hash;$/;"	m	struct:hashtable
+hash_func	hash.h	/^typedef unsigned int (*hash_func)(const char *, unsigned int);$/;"	t
+hashtable	hash.h	/^struct hashtable {$/;"	s
+hashtable_create	hash.c	/^HashTable hashtable_create(int tablesize, hash_func hash,$/;"	f
+hashtable_delete	hash.c	/^int hashtable_delete(HashTable table, const char *key)$/;"	f
+hashtable_destroy	hash.c	/^void hashtable_destroy(HashTable table)$/;"	f
+hashtable_find	hash.c	/^Possion hashtable_find(HashTable table, const char *key)$/;"	f
+hashtable_insert	hash.c	/^int hashtable_insert(HashTable table, const char *key, void *element)$/;"	f
+is_prime	hash.c	/^static int is_prime(int num)$/;"	f	file:
+key	hash.h	/^    char *key;$/;"	m	struct:listnode
+list	hash.h	/^    List *list;$/;"	m	struct:hashtable
+listnode	hash.h	/^struct listnode {$/;"	s
+main	hash.c	/^int main(int argc, char * argv[])$/;"	f
+next_prime	hash.c	/^static int next_prime(int n)$/;"	f	file:
+st	hash.h	/^    enum status st;$/;"	m	struct:listnode	typeref:enum:listnode::status
+status	hash.h	/^enum status {Empty, Legitimate, Delete};$/;"	g
+tablesize	hash.h	/^    int tablesize;$/;"	m	struct:hashtable
