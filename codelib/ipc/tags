@@ -4,8 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-CC	Makefile	/^CC = gcc$/;"	m
-CFLAGS	Makefile	/^CFLAGS := -g -W -O$/;"	m
 CHECK_ARGS	mq_posix.c	16;"	d	file:
 CHECK_ARGS	mq_sysv.c	18;"	d	file:
 CHECK_ARGS	netlink.c	20;"	d	file:
@@ -24,26 +22,25 @@ IPC_SHARM_SIZE_MAX	shm.c	33;"	d	file:
 IPC_UNIX_SOCKET_PATH	unix_socket.c	28;"	d	file:
 IPC_WQ_POSIX_PRIO	mq_posix.c	28;"	d	file:
 KERNELDIR	1/Makefile	/^KERNELDIR ?= \/lib\/modules\/$(shell uname -r)\/build$/;"	m
-LIBS	Makefile	/^LIBS :=$/;"	m
+KERNELDIR	Makefile	/^KERNELDIR ?= \/lib\/modules\/$(shell uname -r)\/build$/;"	m
 MODULE_NAME	1/Makefile	/^MODULE_NAME :=netlink_test$/;"	m
+MODULE_NAME	Makefile	/^MODULE_NAME :=netlink_driver$/;"	m
 MSG_LEN	1/netlink_test.c	17;"	d	file:
-MSG_LEN	netlink_driver.c	17;"	d	file:
+MSG_LEN	netlink_driver.c	16;"	d	file:
+NETLINK_OP	test.c	20;"	d	file:
 NETLINK_TEST	1/netlink_test.c	16;"	d	file:
-NETLINK_TEST	netlink_driver.c	16;"	d	file:
-OBJ	Makefile	/^OBJ := $(patsubst %.c, %.o, $(SRC))$/;"	m
+NETLINK_TEST	netlink_driver.c	15;"	d	file:
 PWD	1/Makefile	/^PWD := $(shell pwd)$/;"	m
-SHM_OP	test.c	17;"	d	file:
-SRC	Makefile	/^SRC := $(wildcard *.c)$/;"	m
-TEST_WRITE_STRING	test.c	52;"	d	file:
+PWD	Makefile	/^PWD := $(shell pwd)$/;"	m
+TEST_WRITE_STRING	test.c	54;"	d	file:
 USER_PORT	1/netlink_test.c	18;"	d	file:
-USER_PORT	netlink_driver.c	18;"	d	file:
+USER_PORT	netlink_driver.c	17;"	d	file:
 _IPC_H	ipc.h	2;"	d
 accept	ipc.h	/^    int     (*accept)(int, struct sockaddr *, socklen_t *);$/;"	m	struct:ipc_ops
 arry	sem.c	/^    unsigned short *arry;$/;"	m	union:semun	file:
 buf	mq_sysv.c	/^    char buf[0];$/;"	m	struct:mq_sysv_data	file:
 buf	sem.c	/^    struct semid_ds *buf;$/;"	m	union:semun	typeref:struct:semun::semid_ds	file:
 cfg	1/netlink_test.c	/^struct netlink_kernel_cfg cfg = {$/;"	v	typeref:struct:netlink_kernel_cfg
-cfg	netlink_driver.c	/^struct netlink_kernel_cfg cfg = {$/;"	v	typeref:struct:netlink_kernel_cfg
 client	test.c	/^int client(struct ipc_ops *ops, const char *name, int role)$/;"	f
 close	ipc.h	/^    int     (*close)(int);$/;"	m	struct:ipc_ops
 ipc_ops	ipc.h	/^struct ipc_ops {$/;"	s
@@ -81,7 +78,8 @@ mq_sysv_send	mq_sysv.c	/^static ssize_t mq_sysv_send(int msgid, void *buf, size_
 mq_sysv_unlink	mq_sysv.c	/^static int mq_sysv_unlink(const char *name)$/;"	f	file:
 msg_type	mq_sysv.c	/^    int msg_type;$/;"	m	struct:mq_sysv_data	file:
 netlink_close	netlink.c	/^static int netlink_close(int fd)$/;"	f	file:
-netlink_open	netlink.c	/^static int netlink_open(const char *name)$/;"	f	file:
+netlink_open	netlink.c	/^static int netlink_open(__attribute__((unused)) const char *name,$/;"	f	file:
+netlink_ops	netlink.c	/^struct ipc_ops netlink_ops = {$/;"	v	typeref:struct:ipc_ops
 netlink_rcv_msg	1/netlink_test.c	/^static void netlink_rcv_msg(struct sk_buff *skb)$/;"	f	file:
 netlink_rcv_msg	netlink_driver.c	/^static void netlink_rcv_msg(struct sk_buff *skb)$/;"	f	file:
 netlink_recv	netlink.c	/^static ssize_t netlink_recv(int fd, void *buf, size_t len)$/;"	f	file:
@@ -90,12 +88,13 @@ nlmsg_seq	netlink.c	/^static size_t nlmsg_seq ;$/;"	v	file:
 nlsk	1/netlink_test.c	/^struct sock *nlsk = NULL;$/;"	v	typeref:struct:sock
 nlsk	netlink_driver.c	/^struct sock *nlsk = NULL;$/;"	v	typeref:struct:sock
 obj-m	1/Makefile	/^obj-m :=$(MODULE_NAME).o$/;"	m
+obj-m	Makefile	/^obj-m :=$(MODULE_NAME).o$/;"	m
 open	ipc.h	/^    int     (*open)(const char *, int);$/;"	m	struct:ipc_ops
 read	ipc.h	/^    ssize_t (*read)(int, void *, size_t);$/;"	m	struct:ipc_ops
 readn	ipc.h	/^    ssize_t (*readn)(int, void *, size_t);$/;"	m	struct:ipc_ops
 semun	sem.c	/^union semun {$/;"	u	file:
 send_usrmsg	1/netlink_test.c	/^int send_usrmsg(char *pbuf, uint16_t len)$/;"	f
-send_usrmsg	netlink_driver.c	/^int send_usrmsg(char *pbuf, uint16_t len)$/;"	f
+send_usrmsg	netlink_driver.c	/^int send_usrmsg(int pid, int dir, const char *pbuf, uint16_t len)$/;"	f
 server	test.c	/^int server(struct ipc_ops *ops, const char *name, int role)$/;"	f
 setblock	ipc.h	/^    int     (*setblock)(int, int);$/;"	m	struct:ipc_ops
 shm	shm.c	/^static ipc_shm_t shm[IPC_SHARM_SIZE_MAX];$/;"	v	file:

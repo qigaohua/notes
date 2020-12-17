@@ -47,7 +47,8 @@ static ipc_shm_t shm[IPC_SHARM_SIZE_MAX];
  *  shm_name 为了兼容，必须使用数字字符串
  *  role 为了兼容，没有使用
  */
-static int shm_open(const char *shm_name, int role)
+static int shm_open(const char *shm_name,
+                    __attribute__((unused)) int role)
 {
     CHECK_ARGS(!shm_name, -1);
     int shmid = -1;

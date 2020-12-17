@@ -11,11 +11,13 @@ extern struct ipc_ops mq_posix_ops;
 extern struct ipc_ops mq_sysv_ops;
 extern struct ipc_ops unix_socket_ops;
 extern struct ipc_ops shm_ops;
+extern struct ipc_ops netlink_ops;
 
 // #define MQ_SYSV_OP
 // #define MQ_POSIX_OP
-#define SHM_OP
+// #define SHM_OP
 //#define UNIX_SOCKET_OP
+#define NETLINK_OP
 
 int client(struct ipc_ops *ops, const char *name, int role)
 {
@@ -79,6 +81,15 @@ int server(struct ipc_ops *ops, const char *name, int role)
             printf("write ok %d !!!\n", i);
         if (++i > 15)
             break;
+#ifdef NETLINK_OP
+        ssize_t rlen;
+        char rbuf[1024] = {0};
+
+        rlen = ops->read(fd, rbuf, sizeof rbuf);
+        if (rlen > 0)
+            printf("recv msg from kernel: %s\n", rbuf);
+
+#endif
         sleep(3);
     }
     sleep(5);
@@ -100,6 +111,8 @@ int main(int argc, char *argv[])
     struct ipc_ops *ops = &mq_sysv_ops;
 #elif defined(SHM_OP)
     struct ipc_ops *ops = &shm_ops;
+#elif defined(NETLINK_OP)
+    struct ipc_ops *ops = &netlink_ops;
 #else
     struct ipc_ops *ops = &unix_socket_ops;
 #endif
