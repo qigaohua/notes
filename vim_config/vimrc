@@ -1,0 +1,818 @@
+"vundle
+filetype off
+
+
+"更新插件:BundleUpdate
+"清除不再使用的插件:BundleClean,
+"列出所有插件:BundleList
+"查找插件:BundleSearch
+"下载插件:BundleInstall
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+"git interface
+Plugin 'tpope/vim-fugitive'
+
+"filesystem
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+"CTRLP[文件搜索]
+Plugin  'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+"全局通过字符串搜索文件，类似grep
+Plugin 'mileszs/ack.vim'
+
+
+Bundle 'taglist.vim'
+" Bundle 'thinca/vim-quickrun'
+
+"html
+"isnowfy only compatible with python not python3
+" Plugin 'isnowfy/python-vim-instant-markdown'
+Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'nelstrom/vim-markdown-preview'
+
+"python sytax checker
+Plugin 'nvie/vim-flake8' "添加PEP8代码风格检查
+Plugin 'vim-scripts/Pydiction'
+Plugin 'vim-scripts/indentpython.vim' "python 自动缩进插件
+
+
+Plugin 'scrooloose/syntastic' "每次保存文件时Vim都会检查代码的语法
+
+"auto-completion stuff
+Plugin 'Valloric/YouCompleteMe'
+"
+
+" Plugin 'klen/rope-vim'
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
+"code folding
+"Plugin 'tmhedberg/SimpylFold'
+
+"Colors!!!
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jnurmine/Zenburn'
+Bundle 'molokai'
+Plugin 'relastle/bluewery.vim'
+
+Plugin 'artur-shaik/vim-javacomplete2'
+
+"代码缩进线
+Bundle "Yggdroot/indentLine"
+
+"快速注释
+Bundle "tpope/vim-commentary"
+Bundle 'DoxygenToolkit.vim'
+
+
+Bundle 'Yggdroot/LeaderF'
+
+" 符号自动补全
+Plugin 'jiangmiao/auto-pairs'
+
+"代码对齐
+"选中要对齐的行，执行 :Tab/:
+Plugin 'godlygeek/tabular'
+
+
+" 彩虹括号 , 与CMake 冲突——会使 CMake 语法高亮失效
+Plugin 'luochen1990/rainbow'
+
+"基于关键字和模式匹配语法高亮
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+"快速对一段文本加上扩号，引号等等
+Plugin 'tpope/vim-surround'
+
+" 关键词自动提示代码片段
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+
+Plugin 'junegunn/limelight.vim'         " 界面设置
+Plugin 'junegunn/goyo.vim'              " 配合limelight使用
+
+call vundle#end()
+
+"==================================================
+" 基本配置
+" 首先设置 mapleader，后面键盘映射随时要用
+" 基本上所有自定义的快捷键都以这个字符打头，比如映射`,w`为`:w`
+let mapleader = ","
+let g:mapleader = ","
+
+" 不兼容 Vi，最大限度使用新特性
+set nocompatible
+
+" 写入文件时，不做备份
+set nobackup
+set nowritebackup
+
+" 不用交换文件
+set noswapfile
+
+
+
+
+" 保存文件的快捷键
+" nmap <leader>w :w!<CR>
+
+" 移除 Windows 文件结尾的 `^M`
+noremap <leader>m :%s/<C-V><C-M>//ge<CR>
+
+" 重新打开文件时，恢复上一次游标位置
+" 通过View可以记住很多设置，比如高亮当前行、折行等等，但是往往比较让人费解
+set viewoptions=cursor  " 只记住游标
+au BufWinLeave ?* mkview
+au VimEnter ?* silent loadview"
+
+
+" 检测文件编码时，优先考虑 UTF-8
+set fileencodings=utf-8,ucs-bom,gbk,gb2312,big5,latin1
+
+" 不同平台，设置不同的行尾符，即 EOL
+" 注意：在 Mac 平台，也是 unix 优先；自 OS X 始，行尾符与 Unix 一致，
+"      都是 `\n` 而不是 `\r`
+if has("win32")
+    set fileformats=dos,unix,mac
+else
+    set fileformats=unix,mac,dos
+endif
+
+" 在断行、合并(join)行时，针对多字节字符（比如中文）的优化处理
+set formatoptions+=mM
+
+
+
+" 采用 C 风格的缩进，适用于大多数语言
+" 细节调整见下面的 `cinoptions`
+" 你也可以尝试 smartindent 和 autoindent
+set cindent
+
+" 细节调整，主要为了适应 Google C++ Style
+" t0: 函数返回类型声明不缩进
+" g0: C++ "public:" 等声明缩进一个字符
+" h1: C++ "public:" 等声明后面的语句缩进一个字符
+" N-s: C++ namespace 里不缩进
+" j1: 合理的缩进 Java 或 C++ 的匿名函数，应该也适用于 JS
+set cinoptions=t0,g1,h1,N-s,j1
+
+
+set scrolloff=10    "在光标接近底端或顶端时，自动下滚或上滚"
+
+" 让制表符智能一些
+set smarttab
+
+
+" 先设置缺省情况，然后根据不同文件类型再次重新设置
+set expandtab | set tabstop=4 | set shiftwidth=4  " Python, CSS, etc.
+
+" 对 C/C++ 等，制表符和缩进都是两个空格
+"au FileType c,cpp,html,htmldjango,lua,javascript,nsis
+"\ set expandtab | set tabstop=2 | set shiftwidth=2
+
+" Makefile 必须保留制表符，且习惯上占八个空格
+" 不过，这年头谁还会写 Makefile？
+au FileType make set noexpandtab | set tabstop=8 | set shiftwidth=8"
+
+
+"除了缩进，另一个深具争议的话题就是 80列 限制。
+"虽然现在显示器大了很多，有些语言习惯上仍然遵守这一规则。
+"通过设置 textwidth，Vim 可以帮我们在输入时或用gq格式化时自动断行。
+"我发现，用 gq 格式化注释特别方便，超长的注释会自动重新排版，以保证不越过指定的长度。
+"目前，我仅对 C/C++/Python/Vim 做这种限制
+au FileType c,cpp,python,vim set textwidth=80
+" 一般如果设定了宽度限制，最好能画一条竖线以警示
+" set colorcolumn=81
+
+
+" 即使在终端，也尽量启用鼠标
+" if has("mouse") | set mouse=a | endif
+
+" 显示输入中的命令，对 gqq/gcc 这种多个字符的命令特别有用
+set showcmd
+" 下面几个不解释，自行查看帮助
+set scrolloff=7
+set wildmenu
+set wildmode="list:longest"
+set ruler
+" 命令行高度为两行
+set cmdheight=1
+
+" 永远显示行号
+" 另有比较酷的相对行号（`relativenumber`），虽然我用不习惯
+set number
+
+set lazyredraw
+" 切换缓存时不用保存
+set hidden
+" 输入模式下，退格键可以退一切字符
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+
+" 去掉提示音
+set noeb
+" set vb
+
+
+" 高亮不想要的空格，比如行尾
+" See [http://vim.wikia.com/wiki/Highlight_unwanted_spaces]
+" - highlight trailing whitespace in red
+" - have this highlighting not appear whilst you are typing in insert mode
+" - have the highlighting of whitespace apply when you open new buffers
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches() " for performance"
+
+
+" 高亮当前行
+" set cursorline
+
+
+" 首先，搜索时忽略大小写（ignorecase）。但是，如果搜索模式里有大写字母，
+" 就不再忽略大小写（smartcase）。
+set ignorecase
+set smartcase
+" 即时显示匹配结果（incsearch），并高亮所有结果（hlsearch）
+set incsearch
+set hlsearch
+map <silent> <leader><CR> :nohlsearch<CR>
+
+
+" 切换窗口的键盘映射：
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" 以及，直接用方向键切换缓存的键盘映射：
+"map <right> :bn<CR>
+"map <left>  :bp<CR>
+"map <up>    :bf<CR>
+"map <down>  :bl<CR>
+
+
+" 这个函数通过替换命令删除行尾空格
+func! DeleteTrailingWS()
+    exec "normal mz"
+    %s/\s\+$//ge
+    exec "normal `z"
+endfunc
+
+" 保存时自动删除行尾空格
+au BufWrite * :call DeleteTrailingWS()
+map <leader>W :call DeleteTrailingWS()<CR>
+
+" 移除只包含空格的行里的空格（有点绕口）
+" 貌似有了前面的函数，这个就没有什么必要了
+map <F2> :%s/\s*$//g<CR>:noh<CR>''<CR>
+
+
+" 改成你自己的名字
+iabbrev xname <qigaohua>
+" 改成你自己的电邮
+iabbrev xmail <qigaohua168@163.com>
+iabbrev xfile <c-r>=expand("%:t")<CR>
+if exists("*strftime")
+    " 当前日期
+    iabbrev xdate <c-r>=strftime("%Y-%m-%d")<CR>
+    " 当前时间
+    iabbrev xtime <c-r>=strftime("%H:%M:%S")<CR>
+endif
+
+
+colorscheme molokai
+
+
+"set bg=dark "背景色设置
+"set hlsearch "高亮度反白
+" For dark
+"colorscheme bluewery
+"let g:lightline = {'colorscheme': 'bluewery' }
+
+" For light
+" colorscheme bluewery-light
+" let g:lightline = {'colorscheme': 'bluewery_light' }
+
+
+" 隐藏滚动条"
+set guioptions-=r
+set guioptions-=L
+set guioptions-=b
+"
+"==============================================================
+
+
+
+
+"==============================================================
+" Enable omni completion.
+" 关键字补全
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"=============================================================
+
+
+
+
+"============================================================
+" YouCompleteMe 配置
+
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_server_log_level = 'info'
+" 设置触发标识符补全的最小字符数，设置为99或更大的数字
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_key_invoke_completion = '<c-z>'
+highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
+highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
+set completeopt=menu,menuone
+
+noremap <c-z> <NOP>
+
+let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
+let g:ycm_complete_in_comments = 1
+
+let g:ycm_confirm_extra_conf = 0
+
+inoremap <leader><leader> <C-x><C-o>
+"在注释输入中也能补全
+let g:ycm_complete_in_comments = 1
+"在字符串输入中也能补全
+let g:ycm_complete_in_strings = 1
+"注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+
+" 设置用于选择补全列表中的第一个选项以及进入补全列表后向下选择的快捷键，默认为
+" tab键和方向下键
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+"============================================================
+
+
+
+"============================================================
+" Start Python PEP 8 stuff
+
+" Number of spaces that a pre-existing tab is equal to.
+au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
+
+"spaces for indents
+au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
+au BufRead,BufNewFile *.py,*.pyw set expandtab
+au BufRead,BufNewFile *.py set softtabstop=4
+
+" Use the below highlight group when displaying bad whitespace is desired.
+"highlight BadWhitespace ctermbg=red guibg=red
+
+" Display tabs at the beginning of a line in Python mode as bad.
+"au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+" Make trailing whitespace be flagged as bad.
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Wrap text after a certain number of characters
+au BufRead,BufNewFile *.py,*.pyw, set textwidth=100
+
+" Use UNIX (\n) line endings.
+au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
+
+" Set the default file encoding to UTF-8:
+set encoding=utf-8
+"看到折叠代码的文档字符串utf-8
+
+" For full syntax highlighting:
+let python_highlight_all=1
+syntax on
+
+" Keep indentation level from previous line:
+autocmd FileType python set autoindent
+
+" make backspaces more powerfull
+set backspace=indent,eol,start
+
+
+"Folding based on indentation:
+autocmd FileType python set foldmethod=indent
+"use space to open folds
+" nnoremap <space> za
+
+" Stop python PEP 8 stuff
+"============================================================
+
+
+
+
+"============================================================
+" 在 syntastic 的作用下，编码中、编译前，
+" 所有语法错误都将被抓出来并 呈现给你
+
+let g:syntastic_error_symbol = '✗'  "set error or warning signs
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_highlighting = 0
+"let g:syntastic_python_checker="flake8,pyflakes,pep8,pylint"
+let g:syntastic_python_checkers=['pyflakes']
+"highlight SyntasticErrorSign guifg=white guibg=black
+
+let g:syntastic_cpp_include_dirs = ['/usr/include/']
+let g:syntastic_cpp_remove_include_errors = 1
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
+let g:syntastic_enable_balloons = 1 "whether to show balloons
+
+
+
+"============================================================
+" 代码折叠
+set foldenable              " 开始折叠
+set foldmethod=syntax       " 设置语法折叠
+set foldcolumn=0            " 设置折叠区域的宽度
+setlocal foldlevel=1        " 设置折叠层数为
+set foldlevelstart=99       " 打开文件是默认不折叠代码"
+"看到折叠代码的文档字符串
+let g:SimpylFold_docstring_preview=1
+" 用空格键来开关折叠
+nnoremap <leader>z @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+" 折叠后背景颜色
+:hi Folded guibg=black guifg=grey40 ctermfg=grey ctermbg=darkgrey
+:hi FoldColumn guibg=black guifg=grey20 ctermfg=4 ctermbg=7
+
+"============================================================
+
+
+
+
+"============================================================
+"显示文件目录列表窗口
+"NERDTree配置()
+" 显示行号
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+" 是否显示隐藏文件
+let NERDTreeShowHidden=0
+" 设置宽度
+let NERDTreeWinSize=25
+" 在终端启动vim时，共享NERDTree
+"let g:nerdtree_tabs_open_on_console_startup=1
+" " 忽略一下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+"let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+" 显示书签列表
+let NERDTreeShowBookmarks=1
+map <F4> :NERDTreeToggle<CR>
+"============================================================
+
+
+
+
+"============================================================
+"显示文件中函数列表窗口
+let Tlist_Ctags_Cmd='ctags'
+let Tlist_Show_One_File=1               "不同时显示多个文件的tag，只显示当前文件的
+let Tlist_WinWidt =20                   "设置taglist的宽度
+let Tlist_Exit_OnlyWindow=1             "如果taglist窗口是最后一个窗口，则退出vim
+let Tlist_Use_Right_Window=1           "在右侧窗口中显示taglist窗口
+map <F3> :TlistToggle<CR>               "快捷键F3切换函数列表
+"============================================================
+
+
+
+
+
+"============================================================
+"模糊查找文件名
+"<leader>f   # 模糊搜索最近打开的文件(MRU)
+"<leader>p   # 模糊搜索当前目录及其子目录下的所有文件
+"ctrl + j/k  # 进行上下选择
+"ctrl + x    # 在当前窗口水平分屏打开文件
+"ctrl + v    # 同上, 垂直分屏
+"ctrl + t    # 在tab中打开
+"F5          # 刷新可搜索文件
+"<c-d>       # 只能搜索全路径文件
+"<c-r>       # 可以使用正则搜索文件
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>f :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+let g:ctrlp_working_path_mode = 'r'
+"模糊查找函数
+map <leader>h :CtrlPFunky<CR>
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_funky_syntax_highlight = 1
+"============================================================
+
+
+
+
+"============================================================
+"0或者s: 查找C语言符号，即查找函数名、宏、枚举值等出现的地方
+"1或者g: 查找函数、宏、枚举等定义的位置，类似ctags所提供的功能
+"2或者d: 查找本函数调用的函数
+"3或者c: 查找调用本函数的函数
+"4或者t: 查找指定的字符串
+"6或者e: 查找egrep模式，相当于egrep功能，但查找速度快多了
+"7或者f: 查找并打开文件，类似vim的find功能
+"8或者i : 查找#include这个文件的文件（们）
+"find `pwd` -name "*.[ch]" -o -name "*.cpp" > cscope.files
+
+if has("cscope")
+    set csprg=/usr/bin/cscope
+    set csto=1           "先从ctags查找
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    " else add database pointed to by environment
+    elseif filereadable("../cscope.out")
+        cs add ../cscope.out
+    elseif filereadable("../../cscope.out")
+        cs add ../../cscope.out
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set csverb
+endif
+
+" set cscopequickfix=s-,c-,d-,i-,t-,e-
+set cscopeverbose
+
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+" nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+" nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-\>e :cs find e<space>
+nmap <C-\>f :cs find f<space>
+nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+"============================================================
+
+
+
+
+"============================================================
+"TODO、FIXME等管理
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
+
+"-i 忽略大小写
+nmap <leader>a :Ack<space>-i<space>
+
+command Todo Ack!  'TODO|FIXME|HACK'
+
+command Debug Ack! 'NOTE|INFO|IDEA'
+"============================================================
+
+
+
+
+"============================================================
+"记住上次打开光标位置
+if has("autocmd")
+   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+       \| exe "normal g'\"" | endif
+endif
+"============================================================
+
+
+
+"============================================================
+"powerline配置
+"1.pip install git+git://github.com/powerline/powerline
+"2.通过下面的 wget 命令下载最新的系统字体及字体配置文件
+"wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+"wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+"3.mv PowerlineSymbols.otf /usr/share/fonts/
+"4.fc-cache -vf /usr/share/fonts/
+"5.mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+set rtp+=~/.local/lib/python3.8/site-packages/powerline/bindings/vim/
+" set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = '❯'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '❮'
+"============================================================
+
+
+
+"============================================================
+" 对齐线显示
+map <leader>il :IndentLinesToggle<CR>
+let g:indentLine_enabled = 0
+"let g:indentLine_char = '¦'
+let g:indentLine_setColors = 1
+let g:indentLine_color_term = 239
+
+let g:indentLine_leadingSpaceChar = '.'
+let g:indentLine_leadingSpaceEnabled = 1
+"映射到ctrl+i键
+map <C-i> :IndentLinesToggle<CR>
+"============================================================
+
+
+
+"============================================================
+"vim-commentary
+"为python和shell等添加注释
+"gc gcgc
+autocmd FileType python,shell,coffee set commentstring=#\ %s
+"修改注释风格
+autocmd FileType java,c,cpp set commentstring=//\ %s
+"============================================================
+
+
+"============================================================
+"进行版权声明的设置
+"添加或更新头
+map <F12> :call TitleDet()<cr>'s
+function AddTitle()
+    call append( 0, "/*=============================================================================")
+    call append( 1, "#       COPYRIGHT NOTICE")
+    call append( 2, "#       Copyright (c) 2014")
+    call append( 3, "#       All rights reserved")
+    call append( 4, "#")
+    call append( 5, "#       @author       :qigaohua")
+    call append( 6, "#       @version      :")
+    call append( 7, "#       @file         :".expand("%:p:h")."\/".expand("%:t"))
+    call append( 8, "#       @date         :".strftime("%Y/%m/%d %H:%M"))
+    call append( 9, "#       @algorithm    :")
+    call append(10, "=============================================================================*/")
+    call append(11, "")
+    echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
+endfunction
+"更新最近修改时间和文件名
+function UpdateTitle()
+    normal m'
+    execute '/#       @date      /s@:.*$@\=strftime(":%Y-%m-%d %H:%M")@'
+    normal ''
+    normal mk
+    execute '/#       @file      /s@:.*$@\=":".expand("%:p:h")."\\".expand("%:t")@'
+    execute "noh"
+    normal 'k
+    echohl WarningMsg | echo "Successful in updating the copy right." | echohl None
+endfunction
+
+"判断前10行代码里面，是否有COPYRIGHT NOTICE这个单词，
+"如果没有的话，代表没有添加过作者信息，需要新添加；
+"如果有的话，那么只需要更新即可
+function TitleDet()
+    let n = 2
+    let line = getline(n)
+    let str = '^#       COPYRIGHT NOTICE$'
+    if line =~ str
+        call UpdateTitle()
+        return
+    endif
+    call AddTitle()
+endfunction
+
+" 代码注释
+"函数注释：光标移动到函数上，运行 :Dox
+"文件注释：光标移动到文件头，运行:DoxAuthor
+"license注释: DoxLic
+let g:DoxygenToolkit_authorName="qigaohua, qigaohua168@163.com"
+let s:licenseTag = "Copyright (C) 2017-2100 All right reserved\<enter>"
+let s:licenseTag = s:licenseTag . "For free\<enter>"
+let g:DoxygenToolkit_licenseTag = s:licenseTag
+let g:DoxygenToolkit_briefTag_funcName="yes"
+let g:doxygen_enhanced_color=1
+"============================================================
+
+
+
+"============================================================
+" 按下F5重新生成tag文件，并更新taglist
+"map <F7> :!ctags -R .<CR><CR>:TlistUpdate<CR>
+"imap <F7> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>:TlistUpdate<CR>
+map <leader>c :!ctags -R .<CR><CR>:TlistUpdate<CR>
+imap <leader>c <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>:TlistUpdate<CR>
+set tags=tags
+set tags+=./tags " 表示在当前工作目录下搜索tags文件
+set tags+=/home/qigaohua/work/opensource/glibc/glibc/tags
+"set tags+=/home/qigaohua/work/opensource/dpdk-stable-17.08.2/tags
+"set tags+=/home/qigaohua/work/opensource/linux0.11/tags
+"set tags+=/home/qigaohua/work/gitcode/gear-lib/tags
+set tags+=/home/qigaohua/work/gitcode/notes/codelib/config_2/tags
+
+
+"============================================================
+
+
+
+"============================================================
+" rainbow 插件配置
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+    \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+    \   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+    \   'operators': '_,_',
+    \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+    \   'separately': {
+    \       '*': {},
+    \       'tex': {
+    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+    \       },
+    \       'lisp': {
+    \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+    \       },
+    \       'vim': {
+    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/',
+    \          'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody',
+    \   'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+    \       },
+    \       'html': {
+    \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ > ])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ > '."'".'"><=`]*))?)*\>/ > end=#</\z1># fold'],
+    \       },
+    \       'css': 0,
+    \   }
+    \}
+"============================================================
+
+
+
+"============================================================
+"vim-surround 插件
+vmap " S"
+vmap ' S'
+vmap ` S`
+vmap [ S[
+vmap ( S(
+vmap { S{
+vmap } S }
+vmap ] S]
+vmap ) S )
+vmap > S>
+"============================================================
+
+
+"============================================================
+"UltiSnips 插件配置
+"插入模式下直接通过<C-z>键来触发UltiSnips的代码块补全
+let g:UltiSnipsExpandTrigger="<C-x>"
+"弹出UltiSnips的可用列表,由于不常用, 所以这里设置成了特殊的<C-i>映射
+let g:UltiSnipsListSnippets="<C-i>"
+"<C-f>跳转的到下一个代码块可编辑区
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+"<C-b>跳转到上一个代码块可编辑区
+let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+"============================================================
+
+
+
+
+
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+" 包含的前后段的数量
+let g:limelight_paragraph_span = 1
+" Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
+
+" Goyo配置
+let g:goyo_width = 86
+let g:goyo_height = 90
+let g:goyo_linenr = 0
+" 进入goyo模式后自动触发limelight，退出则关闭
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+" limelight键盘映射
+nmap <silent> <leader>g      :Goyo<CR>
+xmap <silent> <leader>g      :Goyo<CR>
+
+
+
+" vim 半透明
+hi Normal ctermfg=252 ctermbg=none
