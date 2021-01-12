@@ -1,0 +1,17 @@
+user_key/ :
+这是使用自己随便写的key加解密的脚本，以及一个key文件样例。
+
+openssl_rsault_ende/
+这是使用公钥加密、私钥解密的脚本
+
+openssl_rsault_sign_verify/
+这是使用私钥签名、公钥验证的脚本
+
+genrsa.pri:
+私钥文件，由openssl genrsa -out genrsa.pri产生
+
+rsa.pub:
+公钥文件，由openssl rsa -in genrsa.pri -pubout -out rsa.pub产生
+
+test.tar.gz:
+测试文件
