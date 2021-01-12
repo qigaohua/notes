@@ -15,9 +15,10 @@
 #include <lua5.2/lualib.h>
 #include <lua5.2/lauxlib.h>
 
+#include "lua_c.h"
+
 #ifndef MY_PRINT_INFO
 #define MY_PRINT_INFO
-
 
 #define B_RED(str)      "\033[1;31m" str "\033[0m"
 #define B_GREEN(str)    "\033[1;32m" str "\033[0m"
@@ -33,9 +34,16 @@
 }
 
 #define DEBUG(code_segment) { code_segment }
+
+#define logdebug(fmt, ...) {\
+    fprintf(stdout, B_GREEN("%s:%d : "fmt"\r\n"), __FILE__, __LINE__, ##__VA_ARGS__); \
+}
+
 #else
+
 #define ASSERT(x, msg)
 #define DEBUG(code_segment)
+#define logdebug(fmt, ...)
 #endif
 
 
@@ -46,11 +54,6 @@
 
 #define logwarn(fmt, ...) {\
     fprintf(stderr, B_YELLOW("%s:%d  "fmt"\r\n"), __FILE__, __LINE__, ##__VA_ARGS__); \
-}
-
-
-#define logdebug(fmt, ...) {\
-    fprintf(stdout, B_GREEN("%s:%d : "fmt"\r\n"), __FILE__, __LINE__, ##__VA_ARGS__); \
 }
 
 
@@ -76,7 +79,6 @@ lua_State* lua_c_loadfile(const char *filename)
     L = luaL_newstate();
     if (!L)
         logerr("Call luaL_newstate() failed !");
-
     luaL_openlibs(L);
 
     /* 载入和运行lua配置文件 */
@@ -85,7 +87,6 @@ lua_State* lua_c_loadfile(const char *filename)
 
     /* 或者直接调用lua_dofile来完成载入和运行 */
     int ret = luaL_dofile(L, filename);
-
 
     logdebug("load lua config OK.");
     return L;
@@ -177,8 +178,6 @@ static int lua_c_getvalue(lua_State *L, int *stack_top, va_list ap)
     return 0;
 }
 
-
-#define LUA_CONFIG
 
 #ifdef LUA_CONFIG
 
@@ -495,8 +494,8 @@ int lua_c_parse_table(lua_State *L, const char *table_name)
 
 //for test
 
-// #define TEST
-#if defined(TEST)
+#define TEST
+#if defined(TEST) && !defined(LUA_CONFIG)
 
 #include "lua_c.h"
 
@@ -575,7 +574,7 @@ int main(int argc, char *argv[])
     printf("l7[2]: %d\n", lua_c_get_integer(L, "lua_table7", 2));
 
 
-    printf("\n******* test index table *******\n");
+    printf("\n******* test print table *******\n");
     lua_c_parse_table(L, "lua_table3");
 
 
