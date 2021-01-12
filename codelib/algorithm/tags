@@ -1,0 +1,164 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACtree_build	ac-bm.c	/^int ACtree_build (pattern_tree *ptree,$/;"	f
+ACtree_compute_BCshifts	ac-bm.c	/^int ACtree_compute_BCshifts (pattern_tree *ptree)$/;"	f
+ACtree_compute_GSshifts	ac-bm.c	/^int ACtree_compute_GSshifts (pattern_tree *ptree)$/;"	f
+ACtree_compute_shifts	ac-bm.c	/^int ACtree_compute_shifts (pattern_tree *ptree)$/;"	f
+ACtree_init_GSshifts	ac-bm.c	/^int ACtree_init_GSshifts (pattern_tree *ptree)$/;"	f
+ACtree_print_tree	ac-bm.c	/^void ACtree_print_tree (pattern_tree *ptree)$/;"	f
+APHash	hash/hash.h	/^unsigned int APHash(char *str)$/;"	f
+ARRAY_SIZE	bloom-filter/bloom_filter.h	14;"	d
+ASIZE	bm.c	100;"	d	file:
+BCshift	ac-bm.h	/^ int BCshift ;$/;"	m	struct:_pattern_tree_node
+BCshift	ac-bm.h	/^ int BCshift[256] ;             \/\/ 256个字符中坏字符的shift$/;"	m	struct:_pattern_tree
+BIG_CONSTANT	bloom-filter/bloom_filter.h	70;"	d
+BIG_CONSTANT	hash/MurmurHash3.c	28;"	d	file:
+BIG_CONSTANT	hash/MurmurHash3.c	48;"	d	file:
+BKDRHash	hash/hash.h	/^unsigned int BKDRHash(char *str)$/;"	f
+BL_CALLOC	bloom-filter/bloom_filter.h	26;"	d
+BL_FREE	bloom-filter/bloom_filter.h	27;"	d
+BM	bm.c	/^void BM(char *x, int m, char *y, int n) {$/;"	f
+BYTE	bloom-filter/bloom_filter.h	/^typedef unsigned char BYTE;$/;"	t
+BuildGoodS	bm.c	/^void BuildGoodS(const char* pattern, size_t pattern_length, unsigned int* goods)$/;"	f
+CHAR	bloom-filter/bloom_filter.h	/^ypedef char CHAR;$/;"	v
+DJBHash	hash/hash.h	/^unsigned int DJBHash(char *str)$/;"	f
+ELFHash	hash/hash.h	/^unsigned int ELFHash(char *str)$/;"	f
+FIB_MAXSIZE	FibonacciSearch.c	3;"	d	file:
+FORCE_INLINE	bloom-filter/bloom_filter.h	60;"	d
+FORCE_INLINE	hash/MurmurHash3.c	21;"	d	file:
+FORCE_INLINE	hash/MurmurHash3.c	33;"	d	file:
+FibonacciSearch	FibonacciSearch.c	/^int FibonacciSearch(int *data, int length, int searchValue)  $/;"	f
+GSshift	ac-bm.h	/^ int GSshift ;        \/\/ 好字串位移$/;"	m	struct:_pattern_tree_node
+INT	bloom-filter/bloom_filter.h	/^typedef int INT;$/;"	t
+INT64	bloom-filter/bloom_filter.h	/^typedef long long INT64;$/;"	t
+JSHash	hash/hash.h	/^unsigned int JSHash(char *str)$/;"	f
+LEFTCHILD	sort.c	171;"	d	file:
+MAX	bm.c	101;"	d	file:
+MAX_ITEMS	ac-bm.h	4;"	d
+MurmurHash3_x64_128	bloom-filter/bloom_filter.h	/^static void MurmurHash3_x64_128 ( const void * key, const INT len,$/;"	f
+MurmurHash3_x64_128	hash/MurmurHash3.c	/^void MurmurHash3_x64_128 ( const void * key, const int len,$/;"	f
+MurmurHash3_x86_128	hash/MurmurHash3.c	/^void MurmurHash3_x86_128 ( const void * key, const int len,$/;"	f
+MurmurHash3_x86_32	hash/MurmurHash3.c	/^void MurmurHash3_x86_32 ( const void * key, int len,$/;"	f
+PARENT	sort.c	170;"	d	file:
+PATTERN_LEN	ac-bm.h	3;"	d
+PJWHash	hash/hash.h	/^unsigned int PJWHash(char *str)$/;"	f
+ProduceFib	FibonacciSearch.c	/^void ProduceFib(int *fib, int size)  $/;"	f
+RIGHTCHILD	sort.c	172;"	d	file:
+ROTL32	hash/MurmurHash3.c	25;"	d	file:
+ROTL32	hash/MurmurHash3.c	45;"	d	file:
+ROTL64	bloom-filter/bloom_filter.h	68;"	d
+ROTL64	hash/MurmurHash3.c	26;"	d	file:
+ROTL64	hash/MurmurHash3.c	46;"	d	file:
+RSHash	hash/hash.h	/^unsigned int RSHash(char *str)$/;"	f
+SALT_CONSTANT	bloom-filter/bloom_filter.h	61;"	d
+SDBMHash	hash/hash.h	/^unsigned int SDBMHash(char *str)$/;"	f
+SEED	hash/MurmurHash3.c	341;"	d	file:
+SHORT	bloom-filter/bloom_filter.h	/^typedef short SHORT;$/;"	t
+UINT	bloom-filter/bloom_filter.h	/^typedef unsigned int UINT;$/;"	t
+UINT64	bloom-filter/bloom_filter.h	/^typedef unsigned long long UINT64;$/;"	t
+USHORT	bloom-filter/bloom_filter.h	/^typedef unsigned short USHORT;$/;"	t
+XSIZE	bm.c	99;"	d	file:
+_AC_BM_H	ac-bm.h	2;"	d
+_MURMURHASH3_H_	hash/MurmurHash3.h	6;"	d
+__BLOOM_FILTER_H_	bloom-filter/bloom_filter.h	2;"	d
+__bloom__	bloom-filter/bloom_filter.h	/^typedef struct __bloom__{$/;"	s
+__bloom_filter_search	bloom-filter/bloom_filter.h	/^FORCE_INLINE INT __bloom_filter_search(zxfw_bloom_t *bf, UINT64 *hashes)$/;"	f
+_clean_tree	ac-bm.c	/^void _clean_tree (pattern_tree_node *root)$/;"	f
+_init_GSshifts	ac-bm.c	/^int _init_GSshifts (pattern_tree_node *root, int shift)$/;"	f
+_matched_info	ac-bm.h	/^typedef struct _matched_info$/;"	s
+_merge_sort	sort.c	/^int _merge_sort(int *array, int start, int end, int *temp)$/;"	f
+_pattern_data	ac-bm.h	/^typedef struct _pattern_data$/;"	s
+_pattern_tree	ac-bm.h	/^typedef struct _pattern_tree$/;"	s
+_pattern_tree_node	ac-bm.h	/^typedef struct _pattern_tree_node$/;"	s
+_print_tree	ac-bm.c	/^void _print_tree (pattern_tree_node *root)$/;"	f
+acbm_clean	ac-bm.c	/^void acbm_clean (pattern_tree *ptree)$/;"	f
+acbm_init	ac-bm.c	/^pattern_tree *acbm_init (pattern_data *patterns, int npattern)$/;"	f
+acbm_search	ac-bm.c	/^int acbm_search (pattern_tree *ptree,$/;"	f
+bitmap	bloom-filter/bloom_filter.h	/^    BYTE bitmap[0];$/;"	m	struct:__bloom__
+bitmap_getbit	bloom-filter/bloom_filter.h	/^static inline INT bitmap_getbit(BYTE *bitmap, UINT64 idx)$/;"	f
+bitmap_setbit	bloom-filter/bloom_filter.h	/^static inline void bitmap_setbit(BYTE *bitmap, UINT64 idx)$/;"	f
+bits_num	bloom-filter/bloom_filter.h	/^    UINT64 bits_num; \/* number of bits in bitmap*\/$/;"	m	struct:__bloom__
+capacity	bloom-filter/bloom_filter.h	/^    UINT64 capacity;\/**\/$/;"	m	struct:__bloom__
+ch	ac-bm.h	/^ unsigned char ch ;       \/\/ 节点对应的字符$/;"	m	struct:_pattern_tree_node
+childs	ac-bm.h	/^ struct _pattern_tree_node *childs[256] ; \/\/ 256个字符的对应节点指针$/;"	m	struct:_pattern_tree_node	typeref:struct:_pattern_tree_node::_pattern_tree_node
+compute_GSshift	ac-bm.c	/^int compute_GSshift (pattern_tree *ptree,$/;"	f
+counts_per_func	bloom-filter/bloom_filter.h	/^    UINT64 counts_per_func;$/;"	m	struct:__bloom__
+data	ac-bm.h	/^ unsigned char data[PATTERN_LEN] ; \/\/ 关键字字串$/;"	m	struct:_pattern_data
+depth	ac-bm.h	/^ int depth ;           \/\/ 节点深度$/;"	m	struct:_pattern_tree_node
+exchange	sort.c	/^int exchange(int *array, int p1, int p2)$/;"	f
+fmix32	hash/MurmurHash3.c	/^FORCE_INLINE uint32_t fmix32 ( uint32_t h )$/;"	f
+fmix64	bloom-filter/bloom_filter.h	/^FORCE_INLINE UINT64 fmix64(UINT64 k)$/;"	f
+fmix64	hash/MurmurHash3.c	/^FORCE_INLINE uint64_t fmix64 ( uint64_t k )$/;"	f
+get_next	kmp.c	/^int get_next(const char *p, int *next, int size)$/;"	f
+getblock	bloom-filter/bloom_filter.h	72;"	d
+getblock32	hash/MurmurHash3.c	/^FORCE_INLINE uint32_t getblock32 ( const uint32_t * p, int i )$/;"	f
+getblock64	hash/MurmurHash3.c	/^FORCE_INLINE uint64_t getblock64 ( const uint64_t * p, int i )$/;"	f
+hash_func	bloom-filter/bloom_filter.h	/^static void hash_func(zxfw_bloom_t *bf, const CHAR *key, UINT len, UINT64 *hashes)$/;"	f
+hashes	bloom-filter/bloom_filter.h	/^    UINT64 *hashes;$/;"	m	struct:__bloom__
+heap_sort	sort.c	/^int heap_sort(int *array, int length)$/;"	f
+insert_sort	sort.c	/^int insert_sort(int *array, int length)$/;"	f
+item_count	bloom-filter/bloom_filter.h	/^    UINT64 item_count;$/;"	m	struct:__bloom__
+k_num	bloom-filter/bloom_filter.h	/^    UINT64 k_num; \/* number of hash functions*\/$/;"	m	struct:__bloom__
+kmp	kmp.c	/^int kmp(const char *t, const char *p, int *next)$/;"	f
+label	ac-bm.h	/^ int label ;         \/\/ 标识, -2 根节点, -1 中间节点, n 第n个字串尾节点$/;"	m	struct:_pattern_tree_node
+len	ac-bm.h	/^ int len ;                         \/\/ 关键字字串长$/;"	m	struct:_pattern_data
+main	FibonacciSearch.c	/^int main()  $/;"	f
+main	ac-bm.c	/^void main()$/;"	f
+main	bf.c	/^int main()$/;"	f
+main	bm.c	/^int main(int argc, char *argv[])$/;"	f
+main	chainListReverse.c	/^int main()$/;"	f
+main	hash/MurmurHash3.c	/^int main()$/;"	f
+main	kmp.c	/^int main()$/;"	f
+main	sort.c	/^int main(int argc, char **argv)$/;"	f
+match_resualt_printf	ac-bm.c	/^int match_resualt_printf (unsigned char *text,$/;"	f
+matched_info_t	ac-bm.h	/^} matched_info_t ;$/;"	t	typeref:struct:_matched_info
+maxHeapify	sort.c	/^int maxHeapify(int *array, int pos, int length)$/;"	f
+max_depth	ac-bm.h	/^ int max_depth ;     \/\/ 最大字串深度$/;"	m	struct:_pattern_tree
+mergeSort	sort.c	/^int mergeSort(int *array, int length)$/;"	f
+merge_array	sort.c	/^int merge_array(int *array, int start, int middle, int end, int *temp)$/;"	f
+min_pattern_size	ac-bm.h	/^ int min_pattern_size ;          \/\/ 最短的字串长度$/;"	m	struct:_pattern_tree
+mychar	ac-bm.c	/^unsigned char mychar[100];$/;"	v
+nchild	ac-bm.h	/^ int nchild ;                             \/\/ 子节点个数$/;"	m	struct:_pattern_tree_node
+next	chainListReverse.c	/^	struct node *next;$/;"	m	struct:node	typeref:struct:node::node	file:
+node	chainListReverse.c	/^struct node {$/;"	s	file:
+offset	ac-bm.h	/^ unsigned long offset ;        \/\/ 在待匹配文本text中的偏移值$/;"	m	struct:_matched_info
+one_child	ac-bm.h	/^ unsigned char one_child ;     \/\/ 其中的一个子索引字符$/;"	m	struct:_pattern_tree_node
+parent	ac-bm.h	/^ struct _pattern_tree_node *parent ;      \/\/ 父节点$/;"	m	struct:_pattern_tree_node	typeref:struct:_pattern_tree_node::_pattern_tree_node
+pattern_count	ac-bm.h	/^ int pattern_count ;             \/\/ 包含的字串个数$/;"	m	struct:_pattern_tree
+pattern_data	ac-bm.h	/^} pattern_data ;$/;"	t	typeref:struct:_pattern_data
+pattern_i	ac-bm.h	/^ int pattern_i ;               \/\/ 关键字在关键字数组中的index$/;"	m	struct:_matched_info
+pattern_list	ac-bm.h	/^ pattern_data *pattern_list ;  \/\/ 指向节点数组第一个字串的指针$/;"	m	struct:_pattern_tree
+pattern_tree	ac-bm.h	/^} pattern_tree ;$/;"	t	typeref:struct:_pattern_tree
+pattern_tree_node	ac-bm.h	/^} pattern_tree_node ;$/;"	t	typeref:struct:_pattern_tree_node
+preBmBc	bm.c	/^void preBmBc(char *x, int m, int bmBc[]) {$/;"	f
+preBmGs	bm.c	/^void preBmGs(char *x, int m, int bmGs[]) {$/;"	f
+printfList	chainListReverse.c	/^int printfList(struct node* head)$/;"	f
+quick_sort	sort.c	/^int quick_sort(int *array, int start, int end)$/;"	f
+reverse	chainListReverse.c	/^int reverse(struct node **head) $/;"	f
+reverse2	chainListReverse.c	/^struct node* reverse2(struct node* head)$/;"	f
+root	ac-bm.h	/^ pattern_tree_node *root ;  \/\/ 树根节点$/;"	m	struct:_pattern_tree
+rotl32	hash/MurmurHash3.c	/^inline static uint32_t rotl32 ( uint32_t x, int8_t r )$/;"	f	file:
+rotl64	bloom-filter/bloom_filter.h	/^FORCE_INLINE UINT64 rotl64 (UINT64 x, CHAR r)$/;"	f
+rotl64	hash/MurmurHash3.c	/^inline static uint64_t rotl64 ( uint64_t x, int8_t r )$/;"	f	file:
+set_GSshift	ac-bm.c	/^int set_GSshift (pattern_tree *ptree, unsigned char *pat, int depth, int shift)$/;"	f
+shell_sort	sort.c	/^int shell_sort(int *array, int length, int step)$/;"	f
+str_bf	bf.c	/^int str_bf(const char *S, const char *T)$/;"	f
+suffixes	bm.c	/^void suffixes(char *x, int m, int *suff) {$/;"	f
+suffixes2	bm.c	/^void suffixes2(char *x, int m, int *suff)$/;"	f
+uint32_t	hash/MurmurHash3.h	/^typedef unsigned int uint32_t;$/;"	t
+uint64_t	hash/MurmurHash3.h	/^typedef unsigned __int64 uint64_t;$/;"	t
+uint8_t	hash/MurmurHash3.h	/^typedef unsigned char uint8_t;$/;"	t
+use_bytes	bloom-filter/bloom_filter.h	/^    UINT64 use_bytes;$/;"	m	struct:__bloom__
+v	chainListReverse.c	/^	int v;$/;"	m	struct:node	file:
+zxfw_bloom_filter_add	bloom-filter/bloom_filter.h	/^FORCE_INLINE INT zxfw_bloom_filter_add(zxfw_bloom_t *bf, const CHAR *str, UINT len)$/;"	f
+zxfw_bloom_filter_destroy	bloom-filter/bloom_filter.h	/^FORCE_INLINE void zxfw_bloom_filter_destroy(zxfw_bloom_t *bf)$/;"	f
+zxfw_bloom_filter_load	bloom-filter/bloom_filter.h	/^FORCE_INLINE zxfw_bloom_t *zxfw_bloom_filter_load(const CHAR *filename)$/;"	f
+zxfw_bloom_filter_new	bloom-filter/bloom_filter.h	/^FORCE_INLINE zxfw_bloom_t *zxfw_bloom_filter_new(UINT64 capacity, double error_rate)$/;"	f
+zxfw_bloom_filter_reset	bloom-filter/bloom_filter.h	/^FORCE_INLINE void zxfw_bloom_filter_reset(zxfw_bloom_t *bf)$/;"	f
+zxfw_bloom_filter_save	bloom-filter/bloom_filter.h	/^FORCE_INLINE INT zxfw_bloom_filter_save(zxfw_bloom_t *bf, const CHAR *filename)$/;"	f
+zxfw_bloom_filter_search	bloom-filter/bloom_filter.h	/^FORCE_INLINE INT zxfw_bloom_filter_search(zxfw_bloom_t *bf, const CHAR *key, UINT key_len)$/;"	f
+zxfw_bloom_t	bloom-filter/bloom_filter.h	/^} zxfw_bloom_t;$/;"	t	typeref:struct:__bloom__
