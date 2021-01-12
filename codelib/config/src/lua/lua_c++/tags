@@ -1,0 +1,300 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACLOCAL	Makefile	/^ACLOCAL = ${SHELL} \/home\/qigaohua\/work\/gitcode\/notes\/codelib\/config_2\/missing aclocal-1.16$/;"	m
+ACLOCAL_M4	Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+AMTAR	Makefile	/^AMTAR = $${TAR-tar}$/;"	m
+AM_DEFAULT_VERBOSITY	Makefile	/^AM_DEFAULT_VERBOSITY = 1$/;"	m
+AM_V_AR	Makefile	/^AM_V_AR = $(am__v_AR_$(V))$/;"	m
+AM_V_CXX	Makefile	/^AM_V_CXX = $(am__v_CXX_$(V))$/;"	m
+AM_V_CXXLD	Makefile	/^AM_V_CXXLD = $(am__v_CXXLD_$(V))$/;"	m
+AM_V_GEN	Makefile	/^AM_V_GEN = $(am__v_GEN_$(V))$/;"	m
+AM_V_P	Makefile	/^AM_V_P = $(am__v_P_$(V))$/;"	m
+AM_V_at	Makefile	/^AM_V_at = $(am__v_at_$(V))$/;"	m
+AM_V_lt	Makefile	/^AM_V_lt = $(am__v_lt_$(V))$/;"	m
+AR	Makefile	/^AR = ar$/;"	m
+ARFLAGS	Makefile	/^ARFLAGS = cru$/;"	m
+ASSERT	luac_r.c	19;"	d	file:
+AUTOCONF	Makefile	/^AUTOCONF = ${SHELL} \/home\/qigaohua\/work\/gitcode\/notes\/codelib\/config_2\/missing autoconf$/;"	m
+AUTOHEADER	Makefile	/^AUTOHEADER = ${SHELL} \/home\/qigaohua\/work\/gitcode\/notes\/codelib\/config_2\/missing autoheader$/;"	m
+AUTOMAKE	Makefile	/^AUTOMAKE = ${SHELL} \/home\/qigaohua\/work\/gitcode\/notes\/codelib\/config_2\/missing automake-1.16$/;"	m
+AWK	Makefile	/^AWK = mawk$/;"	m
+CC	Makefile	/^CC = gcc$/;"	m
+CCDEPMODE	Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -g -O2$/;"	m
+CONFIG_CLEAN_FILES	Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_VPATH_FILES	Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
+CONFIG_HEADER	Makefile	/^CONFIG_HEADER = $(top_builddir)\/config.h$/;"	m
+CPP	Makefile	/^CPP = gcc -E$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS = $/;"	m
+CTAGS	Makefile	/^CTAGS = ctags$/;"	m
+CXX	Makefile	/^CXX = g++$/;"	m
+CXXCOMPILE	Makefile	/^CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \\$/;"	m
+CXXDEPMODE	Makefile	/^CXXDEPMODE = depmode=gcc3$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = -g -O2$/;"	m
+CXXLD	Makefile	/^CXXLD = $(CXX)$/;"	m
+CXXLINK	Makefile	/^CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \\$/;"	m
+CYGPATH_W	Makefile	/^CYGPATH_W = echo$/;"	m
+DEFAULT_INCLUDES	Makefile	/^DEFAULT_INCLUDES = -I. -I$(top_builddir)$/;"	m
+DEFS	Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
+DEPDIR	Makefile	/^DEPDIR = .deps$/;"	m
+DIRECTORY_SEPARATOR	luatables.cc	47;"	d	file:
+DIRECTORY_SEPARATOR	luatables.cc	51;"	d	file:
+DISTFILES	Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DIST_COMMON	Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.am $(am__DIST_COMMON)$/;"	m
+DIST_SOURCES	Makefile	/^DIST_SOURCES = $(libllua_a_SOURCES)$/;"	m
+ECHO_C	Makefile	/^ECHO_C = $/;"	m
+ECHO_N	Makefile	/^ECHO_N = -n$/;"	m
+ECHO_T	Makefile	/^ECHO_T = $/;"	m
+EGREP	Makefile	/^EGREP = \/usr\/bin\/grep -E$/;"	m
+ETAGS	Makefile	/^ETAGS = etags$/;"	m
+EXEEXT	Makefile	/^EXEEXT = $/;"	m
+GREP	Makefile	/^GREP = \/usr\/bin\/grep$/;"	m
+INSTALL	Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL_DATA	Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_HEADER	Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_STRIP_PROGRAM	Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+Integer	luatables.h	/^		Integer$/;"	e	enum:LuaKey::Type
+L	luatables.h	/^	lua_State *L;$/;"	m	class:LuaStateRef
+L	luatables.h	/^	lua_State *L;$/;"	m	class:LuaTable
+LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
+LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
+LIBRARIES	Makefile	/^LIBRARIES = $(noinst_LIBRARIES)$/;"	m
+LIBS	Makefile	/^LIBS = $/;"	m
+LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
+LUATABLES_H	luatables.h	27;"	d
+LuaConfig	lua_config.cc	/^    LuaConfig(){};$/;"	f	class:LuaConfig	file:
+LuaConfig	lua_config.cc	/^class LuaConfig: public LuaTable$/;"	c	file:
+LuaKey	luatables.h	/^	LuaKey (const char* key_value) :$/;"	f	struct:LuaKey
+LuaKey	luatables.h	/^	LuaKey (int key_value) :$/;"	f	struct:LuaKey
+LuaKey	luatables.h	/^struct LuaKey {$/;"	s
+LuaStateRef	luatables.h	/^	LuaStateRef () :$/;"	f	class:LuaStateRef
+LuaStateRef	luatables.h	/^class LuaStateRef {$/;"	c
+LuaTable	luatables.cc	/^LuaTable::LuaTable (const LuaTable &other) :$/;"	f	class:LuaTable
+LuaTable	luatables.h	/^	LuaTable () :$/;"	f	class:LuaTable
+LuaTable	luatables.h	/^class LuaTable {$/;"	c
+LuaTableNode	luatables.h	/^	LuaTableNode() :$/;"	f	class:LuaTableNode
+LuaTableNode	luatables.h	/^class LuaTableNode {$/;"	c
+MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/home\/qigaohua\/work\/gitcode\/notes\/codelib\/config_2\/missing makeinfo$/;"	m
+MKDIR_P	Makefile	/^MKDIR_P = \/usr\/bin\/mkdir -p$/;"	m
+NORMAL_INSTALL	Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_UNINSTALL	Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NULL	Makefile	/^NULL = $/;"	m
+OBJEXT	Makefile	/^OBJEXT = o$/;"	m
+PACKAGE	Makefile	/^PACKAGE = config-qgh$/;"	m
+PACKAGE_BUGREPORT	Makefile	/^PACKAGE_BUGREPORT = qigaohua@xxx.con$/;"	m
+PACKAGE_NAME	Makefile	/^PACKAGE_NAME = config-qgh$/;"	m
+PACKAGE_STRING	Makefile	/^PACKAGE_STRING = config-qgh 1.0.0$/;"	m
+PACKAGE_TARNAME	Makefile	/^PACKAGE_TARNAME = config-qgh$/;"	m
+PACKAGE_URL	Makefile	/^PACKAGE_URL = $/;"	m
+PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = 1.0.0$/;"	m
+PATH_SEPARATOR	Makefile	/^PATH_SEPARATOR = :$/;"	m
+POST_INSTALL	Makefile	/^POST_INSTALL = :$/;"	m
+POST_UNINSTALL	Makefile	/^POST_UNINSTALL = :$/;"	m
+POW_LIB	Makefile	/^POW_LIB = $/;"	m
+PRE_INSTALL	Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_UNINSTALL	Makefile	/^PRE_UNINSTALL = :$/;"	m
+RANLIB	Makefile	/^RANLIB = ranlib$/;"	m
+SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
+SHELL	Makefile	/^SHELL = \/bin\/bash$/;"	m
+SOURCES	Makefile	/^SOURCES = $(libllua_a_SOURCES)$/;"	m
+STRIP	Makefile	/^STRIP = $/;"	m
+String	luatables.h	/^		String,$/;"	e	enum:LuaKey::Type
+Type	luatables.h	/^	enum Type {$/;"	g	struct:LuaKey
+VERSION	Makefile	/^VERSION = 1.0.0$/;"	m
+abs_builddir	Makefile	/^abs_builddir = \/home\/qigaohua\/work\/gitcode\/notes\/codelib\/config_2\/src\/lua$/;"	m
+abs_srcdir	Makefile	/^abs_srcdir = \/home\/qigaohua\/work\/gitcode\/notes\/codelib\/config_2\/src\/lua$/;"	m
+abs_top_builddir	Makefile	/^abs_top_builddir = \/home\/qigaohua\/work\/gitcode\/notes\/codelib\/config_2$/;"	m
+abs_top_srcdir	Makefile	/^abs_top_srcdir = \/home\/qigaohua\/work\/gitcode\/notes\/codelib\/config_2$/;"	m
+ac_ct_AR	Makefile	/^ac_ct_AR = ar$/;"	m
+ac_ct_CC	Makefile	/^ac_ct_CC = gcc$/;"	m
+ac_ct_CXX	Makefile	/^ac_ct_CXX = g++$/;"	m
+acquire	luatables.h	/^	LuaStateRef* acquire() {$/;"	f	class:LuaStateRef
+addSearchPath	luatables.cc	/^void LuaTable::addSearchPath(const char* path) {$/;"	f	class:LuaTable
+am__DEPENDENCIES_1	Makefile	/^am__DEPENDENCIES_1 =$/;"	m
+am__DIST_COMMON	Makefile	/^am__DIST_COMMON = $(srcdir)\/Makefile.in $(top_srcdir)\/depcomp$/;"	m
+am__aclocal_m4_deps	Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/configure.ac$/;"	m
+am__can_run_installinfo	Makefile	/^am__can_run_installinfo = \\$/;"	m
+am__cd	Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__configure_deps	Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__define_uniq_tagged_files	Makefile	/^am__define_uniq_tagged_files = \\$/;"	m
+am__depfiles_remade	Makefile	/^am__depfiles_remade = .\/$(DEPDIR)\/libllua_a-lua_config.Po \\$/;"	m
+am__include	Makefile	/^am__include = include$/;"	m
+am__is_gnu_make	Makefile	/^am__is_gnu_make = { \\$/;"	m
+am__leading_dot	Makefile	/^am__leading_dot = .$/;"	m
+am__make_dryrun	Makefile	/^am__make_dryrun = (target_option=n; $(am__make_running_with_option))$/;"	m
+am__make_keepgoing	Makefile	/^am__make_keepgoing = (target_option=k; $(am__make_running_with_option))$/;"	m
+am__make_running_with_option	Makefile	/^am__make_running_with_option = \\$/;"	m
+am__maybe_remake_depfiles	Makefile	/^am__maybe_remake_depfiles = depfiles$/;"	m
+am__mv	Makefile	/^am__mv = mv -f$/;"	m
+am__quote	Makefile	/^am__quote = $/;"	m
+am__tagged_files	Makefile	/^am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)$/;"	m
+am__tar	Makefile	/^am__tar = $${TAR-tar} chof - "$$tardir"$/;"	m
+am__uniquify_input	Makefile	/^am__uniquify_input = $(AWK) '\\$/;"	m
+am__untar	Makefile	/^am__untar = $${TAR-tar} xf -$/;"	m
+am__v_AR_	Makefile	/^am__v_AR_ = $(am__v_AR_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_AR_0	Makefile	/^am__v_AR_0 = @echo "  AR      " $@;$/;"	m
+am__v_AR_1	Makefile	/^am__v_AR_1 = $/;"	m
+am__v_CXXLD_	Makefile	/^am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_CXXLD_0	Makefile	/^am__v_CXXLD_0 = @echo "  CXXLD   " $@;$/;"	m
+am__v_CXXLD_1	Makefile	/^am__v_CXXLD_1 = $/;"	m
+am__v_CXX_	Makefile	/^am__v_CXX_ = $(am__v_CXX_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_CXX_0	Makefile	/^am__v_CXX_0 = @echo "  CXX     " $@;$/;"	m
+am__v_CXX_1	Makefile	/^am__v_CXX_1 = $/;"	m
+am__v_GEN_	Makefile	/^am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_GEN_0	Makefile	/^am__v_GEN_0 = @echo "  GEN     " $@;$/;"	m
+am__v_GEN_1	Makefile	/^am__v_GEN_1 = $/;"	m
+am__v_P_	Makefile	/^am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_P_0	Makefile	/^am__v_P_0 = false$/;"	m
+am__v_P_1	Makefile	/^am__v_P_1 = :$/;"	m
+am__v_at_	Makefile	/^am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_at_0	Makefile	/^am__v_at_0 = @$/;"	m
+am__v_at_1	Makefile	/^am__v_at_1 = $/;"	m
+am__v_lt_	Makefile	/^am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_lt_0	Makefile	/^am__v_lt_0 = --silent$/;"	m
+am__v_lt_1	Makefile	/^am__v_lt_1 = $/;"	m
+am_libllua_a_OBJECTS	Makefile	/^am_libllua_a_OBJECTS = libllua_a-luatables.$(OBJEXT) \\$/;"	m
+bail	luatables.cc	/^void bail(lua_State *L, const char *msg){$/;"	f
+bindir	Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+build_alias	Makefile	/^build_alias = $/;"	m
+builddir	Makefile	/^builddir = .$/;"	m
+count	luatables.h	/^	unsigned int count;$/;"	m	class:LuaStateRef
+create	lua_config.cc	/^    static LuaConfig* create(const char *config) {$/;"	f	class:LuaConfig
+create_key_stack	luatables.cc	/^void create_key_stack (lua_State *L, std::vector<LuaKey> key_stack) {$/;"	f
+datadir	Makefile	/^datadir = ${datarootdir}$/;"	m
+datarootdir	Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+depcomp	Makefile	/^depcomp = $(SHELL) $(top_srcdir)\/depcomp$/;"	m
+destroy	lua_config.cc	/^    void destroy() {$/;"	f	class:LuaConfig
+docdir	Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+dvidir	Makefile	/^dvidir = ${docdir}$/;"	m
+exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
+exists	luatables.cc	/^bool LuaTableNode::exists() {$/;"	f	class:LuaTableNode
+filename	luatables.h	/^	std::string filename;$/;"	m	class:LuaTable
+freeOnZeroRefs	luatables.h	/^	bool freeOnZeroRefs;$/;"	m	class:LuaStateRef
+fromFile	luatables.cc	/^LuaTable LuaTable::fromFile (const char* _filename) {$/;"	f	class:LuaTable
+fromLuaExpression	luatables.cc	/^LuaTable LuaTable::fromLuaExpression (const char* lua_expr) {$/;"	f	class:LuaTable
+fromLuaState	luatables.cc	/^LuaTable LuaTable::fromLuaState (lua_State* L) {$/;"	f	class:LuaTable
+get	luatables.h	/^	T get() {$/;"	f	class:LuaTableNode
+get	luatables.h	/^	T get(const T& def_value) {$/;"	f	class:LuaTableNode
+getDefault	luatables.cc	/^template<> bool LuaTableNode::getDefault<bool>(const bool &default_value) {$/;"	f	class:LuaTableNode
+getDefault	luatables.cc	/^template<> double LuaTableNode::getDefault<double>(const double &default_value) {$/;"	f	class:LuaTableNode
+getDefault	luatables.cc	/^template<> float LuaTableNode::getDefault<float>(const float &default_value) {$/;"	f	class:LuaTableNode
+getDefault	luatables.cc	/^template<> int LuaTableNode::getDefault<int>(const int &default_value) {$/;"	f	class:LuaTableNode
+getDefault	luatables.cc	/^template<> std::string LuaTableNode::getDefault<std::string>(const std::string &default_value) {$/;"	f	class:LuaTableNode
+getKeyStack	luatables.cc	/^std::vector<LuaKey> LuaTableNode::getKeyStack() {$/;"	f	class:LuaTableNode
+get_current_dir	luatables.cc	46;"	d	file:
+get_current_dir	luatables.cc	50;"	d	file:
+get_file_directory	luatables.cc	/^std::string get_file_directory (const char* filename) {$/;"	f
+host_alias	Makefile	/^host_alias = $/;"	m
+htmldir	Makefile	/^htmldir = ${docdir}$/;"	m
+includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
+infodir	Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+init	lua_config.cc	/^    bool init(const char *config) {$/;"	f	class:LuaConfig	file:
+install_sh	Makefile	/^install_sh = ${SHELL} \/home\/qigaohua\/work\/gitcode\/notes\/codelib\/config_2\/install-sh$/;"	m
+install_sh_DATA	Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_PROGRAM	Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+int_value	luatables.h	/^	int int_value;$/;"	m	struct:LuaKey
+key	luatables.h	/^	LuaKey key;$/;"	m	class:LuaTableNode
+keyStackToString	luatables.cc	/^std::string LuaTableNode::keyStackToString() {$/;"	f	class:LuaTableNode
+keys	luatables.cc	/^std::vector<LuaKey> LuaTableNode::keys() {$/;"	f	class:LuaTableNode
+l_push_LuaKey	luatables.cc	/^void l_push_LuaKey (lua_State *L, const LuaKey &key) {$/;"	f
+length	luatables.cc	/^int LuaTable::length() {$/;"	f	class:LuaTable
+length	luatables.cc	/^size_t LuaTableNode::length() {$/;"	f	class:LuaTableNode
+libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+libllua_a_AR	Makefile	/^libllua_a_AR = $(AR) $(ARFLAGS)$/;"	m
+libllua_a_CPPFLAGS	Makefile	/^libllua_a_CPPFLAGS = \\$/;"	m
+libllua_a_DEPENDENCIES	Makefile	/^libllua_a_DEPENDENCIES = $(am__DEPENDENCIES_1)$/;"	m
+libllua_a_LIBADD	Makefile	/^libllua_a_LIBADD = \\$/;"	m
+libllua_a_OBJECTS	Makefile	/^libllua_a_OBJECTS = $(am_libllua_a_OBJECTS)$/;"	m
+libllua_a_SOURCES	Makefile	/^libllua_a_SOURCES = .\/luatables.cc .\/lua_config.cc$/;"	m
+localedir	Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localstatedir	Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+luaRef	luatables.h	/^	int luaRef;$/;"	m	class:LuaTable
+luaStateRef	luatables.h	/^	LuaStateRef *luaStateRef;$/;"	m	class:LuaTable
+luaTable	luatables.h	/^	LuaTable *luaTable;$/;"	m	class:LuaTableNode
+lua_c_getvalue	luac_r.c	/^int lua_c_getvalue(lua_State *L, ...)$/;"	f
+lua_get_boolean	lua_config.cc	/^static int lua_get_boolean(struct config *c, ...)$/;"	f	file:
+lua_get_double	lua_config.cc	/^static double lua_get_double(struct config *c, ...)$/;"	f	file:
+lua_get_int	lua_config.cc	/^static int lua_get_int(struct config *c, ...)$/;"	f	file:
+lua_get_length	lua_config.cc	/^static int lua_get_length(struct config *c, ...)$/;"	f	file:
+lua_get_node	lua_config.cc	/^static LuaTableNode *lua_get_node(struct config *c, struct int_charp *type_list, int cnt)$/;"	f	file:
+lua_get_string	lua_config.cc	/^static char *lua_get_string(struct config *c, ...)$/;"	f	file:
+lua_load	lua_config.cc	/^static int lua_load(struct config *c, const char *name)$/;"	f	file:
+lua_ops	lua_config.cc	/^struct config_ops lua_ops = {$/;"	v	typeref:struct:config_ops
+lua_save	lua_config.cc	/^static int lua_save(struct config *c)$/;"	f	file:
+lua_unload	lua_config.cc	/^static void lua_unload(struct config *c)$/;"	f	file:
+luc_c_loadfile	luac_r.c	/^lua_State* luc_c_loadfile(const char *filename)$/;"	f
+mandir	Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mkdir_p	Makefile	/^mkdir_p = $(MKDIR_P)$/;"	m
+mkinstalldirs	Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+noinst_LIBRARIES	Makefile	/^noinst_LIBRARIES = libllua.a$/;"	m
+oldincludedir	Makefile	/^oldincludedir = \/usr\/include$/;"	m
+operator !=	luatables.h	/^	bool operator!=(T value) {$/;"	f	class:LuaTableNode
+operator !=	luatables.h	/^bool operator!=(T value, LuaTableNode node) {$/;"	f
+operator <	luatables.h	/^	bool operator<( const LuaKey& rhs ) const {$/;"	f	struct:LuaKey
+operator <<	luatables.h	/^inline std::ostream& operator<<(std::ostream& output, const LuaKey &key) {$/;"	f
+operator =	lua_config.cc	/^    LuaConfig& operator=(const LuaTable &table) {$/;"	f	class:LuaConfig	file:
+operator =	luatables.cc	/^LuaTable& LuaTable::operator= (const LuaTable &other) {$/;"	f	class:LuaTable
+operator =	luatables.h	/^	void operator=(const T &value) {$/;"	f	class:LuaTableNode
+operator ==	luatables.h	/^	bool operator==(T value) {$/;"	f	class:LuaTableNode
+operator ==	luatables.h	/^bool operator==(T value, LuaTableNode node) {$/;"	f
+operator T	luatables.h	/^	operator T() {$/;"	f	class:LuaTableNode
+operator []	luatables.cc	/^LuaTableNode LuaTableNode::operator[](const char *child_str) {$/;"	f	class:LuaTableNode
+operator []	luatables.cc	/^LuaTableNode LuaTableNode::operator[](int child_index) {$/;"	f	class:LuaTableNode
+operator []	luatables.h	/^	LuaTableNode operator[] (const char* key) {$/;"	f	class:LuaTable
+operator []	luatables.h	/^	LuaTableNode operator[] (int key) {$/;"	f	class:LuaTable
+orderedSerialize	luatables.cc	/^std::string LuaTable::orderedSerialize() {$/;"	f	class:LuaTable
+parent	luatables.h	/^	LuaTableNode *parent;$/;"	m	class:LuaTableNode
+pdfdir	Makefile	/^pdfdir = ${docdir}$/;"	m
+pkgdatadir	Makefile	/^pkgdatadir = $(datadir)\/config-qgh$/;"	m
+pkgincludedir	Makefile	/^pkgincludedir = $(includedir)\/config-qgh$/;"	m
+pkglibdir	Makefile	/^pkglibdir = $(libdir)\/config-qgh$/;"	m
+pkglibexecdir	Makefile	/^pkglibexecdir = $(libexecdir)\/config-qgh$/;"	m
+popRef	luatables.cc	/^void LuaTable::popRef() {$/;"	f	class:LuaTable
+prefix	Makefile	/^prefix = \/usr\/local$/;"	m
+program_transform_name	Makefile	/^program_transform_name = s,x,x,$/;"	m
+psdir	Makefile	/^psdir = ${docdir}$/;"	m
+pushRef	luatables.cc	/^void LuaTable::pushRef() {$/;"	f	class:LuaTable
+query_key_stack	luatables.cc	/^bool query_key_stack (lua_State *L, std::vector<LuaKey> key_stack) {$/;"	f
+referencesGlobal	luatables.h	/^	bool referencesGlobal;$/;"	m	class:LuaTable
+release	luatables.h	/^	int release() {$/;"	f	class:LuaStateRef
+remove	luatables.cc	/^void LuaTableNode::remove() {$/;"	f	class:LuaTableNode
+runstatedir	Makefile	/^runstatedir = ${localstatedir}\/run$/;"	m
+save	lua_config.cc	/^    bool save() {$/;"	f	class:LuaConfig
+sbindir	Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+serialize	luatables.cc	/^std::string LuaTable::serialize() {$/;"	f	class:LuaTable
+serialize_lua	serialize.lua.h	/^const char serialize_lua[] = $/;"	v
+set	luatables.cc	/^template<> void LuaTableNode::set<bool>(const bool &value) {$/;"	f	class:LuaTableNode
+set	luatables.cc	/^template<> void LuaTableNode::set<double>(const double &value) {$/;"	f	class:LuaTableNode
+set	luatables.cc	/^template<> void LuaTableNode::set<float>(const float &value) {$/;"	f	class:LuaTableNode
+set	luatables.cc	/^template<> void LuaTableNode::set<std::string>(const std::string &value) {$/;"	f	class:LuaTableNode
+sharedstatedir	Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+srcdir	Makefile	/^srcdir = .$/;"	m
+stackCreateLuaTable	luatables.cc	/^LuaTable LuaTableNode::stackCreateLuaTable() {$/;"	f	class:LuaTableNode
+stackCreateValue	luatables.cc	/^void LuaTableNode::stackCreateValue() {$/;"	f	class:LuaTableNode
+stackDepth	luatables.h	/^	int stackDepth;$/;"	m	class:LuaTable
+stackDepth	luatables.h	/^	int stackDepth;$/;"	m	class:LuaTableNode
+stackPushKey	luatables.cc	/^void LuaTableNode::stackPushKey() {$/;"	f	class:LuaTableNode
+stackQueryTable	luatables.cc	/^LuaTable LuaTableNode::stackQueryTable() {$/;"	f	class:LuaTableNode
+stackQueryValue	luatables.cc	/^bool LuaTableNode::stackQueryValue() {$/;"	f	class:LuaTableNode
+stackRestore	luatables.cc	/^void LuaTableNode::stackRestore() {$/;"	f	class:LuaTableNode
+stackTop	luatables.h	/^	int stackTop;$/;"	m	class:LuaTableNode
+stack_print	luatables.cc	/^void stack_print (const char *file, int line, lua_State *L) {$/;"	f
+string_value	luatables.h	/^	std::string string_value;$/;"	m	struct:LuaKey
+subdir	Makefile	/^subdir = src\/lua$/;"	m
+sysconfdir	Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+target_alias	Makefile	/^target_alias = $/;"	m
+top_build_prefix	Makefile	/^top_build_prefix = ..\/..\/$/;"	m
+top_builddir	Makefile	/^top_builddir = ..\/..$/;"	m
+top_srcdir	Makefile	/^top_srcdir = ..\/..$/;"	m
+transform	Makefile	/^transform = $(program_transform_name)$/;"	m
+type	luatables.h	/^	Type type;$/;"	m	struct:LuaKey
+~LuaConfig	lua_config.cc	/^    virtual ~LuaConfig(){}$/;"	f	class:LuaConfig
+~LuaTable	luatables.cc	/^LuaTable::~LuaTable() {$/;"	f	class:LuaTable

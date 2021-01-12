@@ -1,0 +1,35 @@
+{
+	"index1":	"value1",
+	"index2":	{
+		"index3":	"value2",
+		"index4":	{
+			"index5":	"value3"
+		}
+	},
+	"key":	[{
+			"node":	1,
+			"key":	"aaaaa"
+		}, {
+			"node":	2,
+			"key":	"bbbbb"
+		}, {
+			"node":	3,
+			"key":	"eeeee"
+		}],
+	"server":	{
+		"service":	[{
+				"ip":	"127.0.0.1",
+				"port":	12345,
+				"time":	"1天"
+			}, {
+				"ip":	"127.0.0.2",
+				"port":	12346,
+				"time":	"2天"
+			}, {
+				"ip":	"127.0.0.3",
+				"port":	12347,
+				"time":	"3天"
+			}]
+	},
+	"test_array":	["item1", "item2", "item3", "item4", "item5"]
+}
