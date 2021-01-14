@@ -55,7 +55,6 @@ static int json_test(void)
 
     struct config *conf2 = conf_load(NULL);
 
-
     conf_set_string(conf2, "index1", "value1");
     conf_set_string(conf2, "index2", "index3", "value2");
     conf_set_string(conf2, "index2", "index4", "index5" ,"value3");

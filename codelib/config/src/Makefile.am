@@ -1,4 +1,4 @@
-SUBDIRS = json ini lua
+SUBDIRS = json ini $(LUA_DIR)
 
 NULL =
 
@@ -16,10 +16,11 @@ libconfig_la_CPPFLAGS = \
 # 即Makefile文件用到下列变量时可以在configure脚本文件中寻找这些变量的定义
 # 当然，这些变量最初是由开发者在configure.ac文件中增加的
 # _LIBADD指定链接阶段so库的查找路径(gcc -l)
+#    -L./lua/ -lluac    \
 libconfig_la_LIBADD = \
     -L./json/ -lcjson \
     -L./ini/ -lini    \
-    -L./lua/ -lluac    \
+    $(LUA_LIBLDD) \
     $(NULL)
 
 

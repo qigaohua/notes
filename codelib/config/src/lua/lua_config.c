@@ -13,7 +13,8 @@
 #include <string.h>
 #include <stdio.h>
 
-#include <lua5.2/lua.h>
+// #include <lua5.2/lua.h>
+#include <lua.h>
 
 #include "../libconfig.h"
 // #include "config_util.h"

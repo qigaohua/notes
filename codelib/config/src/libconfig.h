@@ -75,21 +75,22 @@ struct int_charp {
 
 
 // only for set value
-// 这里使用长度来判断参数是整型还是字符串，一般情况下地址按十进制转化
-// 字符串，其长度都会大于10，所以这里我们可以设置10亿以下的整型数
+// 这里使用长度来判断参数是整型还是字符串，一般情况下地址按地址转化
+// 字符串，其长度应该会大于7，所以这里我们可以设置400万以下的整型数
 //（在不同的系统情况下，不确定一定成功）。
-// 所以当我们要设置10亿以上整型数时，必须将其转换成字符串去设置。最好的是不要设
+// 所以当我们要设置400万以上整型数时，必须将其转换成字符串去设置。最好的是不要设
 // 置整型数，把整型数都转化成字符串去设置。
+// note: 如果发生段错误，基本上是这里的原因
 #define va_arg_type_2(ap, mix)                                              \
     do {                                                                    \
         char *__tmp = va_arg(ap, char *);                                   \
         char __strtmp[128] = {0};                                           \
-        snprintf(__strtmp, sizeof __strtmp, "%ld", (unsigned long)__tmp);   \
+        snprintf(__strtmp, sizeof __strtmp, "%p",__tmp);   \
         int __len = strlen(__strtmp);                                       \
-        if (__len <= 10) {                                                  \
+        if (__len <= 7) {                                                  \
             mix.type = TYPE_INT;                                            \
             mix.ival = *(int *)&__tmp;                                      \
-        } else if ((__len > 10) && !strncmp(__tmp, "end", 3)) {             \
+        } else if ((__len > 7) && !strncmp(__tmp, "end", 3)) {             \
             mix.type = TYPE_EMPTY;                                          \
             mix.cval = NULL;                                                \
         } else {                                                            \
