@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+FAIL	util-unittest.h	28;"	d
+FAIL_IF	util-unittest.h	39;"	d
+FAIL_IF_NOT	util-unittest.h	50;"	d
+FAIL_IF_NOT_NULL	util-unittest.h	64;"	d
+FAIL_IF_NULL	util-unittest.h	57;"	d
+MAX_SUBSTRINGS	util-unittest.c	153;"	d	file:
+PASS	util-unittest.h	73;"	d
+PASS_IF	util-unittest.h	85;"	d
+TestFn	util-unittest.h	/^    int(*TestFn)(void);$/;"	m	struct:UtTest_
+UtAllocTest	util-unittest.c	/^static UtTest *UtAllocTest(void)$/;"	f	file:
+UtAppendTest	util-unittest.c	/^static int UtAppendTest(UtTest **list, UtTest *test)$/;"	f	file:
+UtCleanup	util-unittest.c	/^void UtCleanup(void)$/;"	f
+UtInitialize	util-unittest.c	/^void UtInitialize(void)$/;"	f
+UtListTests	util-unittest.c	/^void UtListTests(const char *regex_arg)$/;"	f
+UtRegex	util-unittest.c	/^static int UtRegex (const char *regex_arg)$/;"	f	file:
+UtRegisterTest	util-unittest.c	/^void UtRegisterTest(const char *name, int(*TestFn)(void))$/;"	f
+UtRunModeRegister	util-unittest.c	/^void UtRunModeRegister(void)$/;"	f
+UtRunSelftest	util-unittest.c	/^int UtRunSelftest (const char *regex_arg)$/;"	f
+UtRunTests	util-unittest.c	/^uint32_t UtRunTests(const char *regex_arg)$/;"	f
+UtSelftestFalse	util-unittest.c	/^static int UtSelftestFalse(void)$/;"	f	file:
+UtSelftestTrue	util-unittest.c	/^static int UtSelftestTrue(void)$/;"	f	file:
+UtTest	util-unittest.h	/^} UtTest;$/;"	t	typeref:struct:UtTest_
+UtTest_	util-unittest.h	/^typedef struct UtTest_$/;"	s
+__UTIL_UNITTEST_H__	util-unittest.h	2;"	d
+name	util-unittest.h	/^    const char *name;$/;"	m	struct:UtTest_
+next	util-unittest.h	/^    struct UtTest_ *next;$/;"	m	struct:UtTest_	typeref:struct:UtTest_::UtTest_
+parse_regex	util-unittest.c	/^static pcre *parse_regex;$/;"	v	file:
+parse_regex_study	util-unittest.c	/^static pcre_extra *parse_regex_study;$/;"	v	file:
+unittests_fatal	util-unittest.c	/^int unittests_fatal = 0;$/;"	v
+ut_list	util-unittest.c	/^static UtTest *ut_list;$/;"	v	file:
