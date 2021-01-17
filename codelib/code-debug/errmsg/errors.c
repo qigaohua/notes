@@ -119,3 +119,4 @@ const char *avro_strerror(void)
 {
 	return avro_get_error_data()->AVRO_CURRENT_ERROR;
 
+}
