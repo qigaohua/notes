@@ -1,0 +1,97 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Alloc	util-pool.h	/^    void *(*Alloc)(void);$/;"	m	struct:Pool_
+Cleanup	util-pool.h	/^    void (*Cleanup)(void *);$/;"	m	struct:Pool_
+Free	util-pool.h	/^    void (*Free)(void *);$/;"	m	struct:Pool_
+Init	util-pool.h	/^    int (*Init)(void *, void *);$/;"	m	struct:Pool_
+InitData	util-pool.h	/^    void *InitData;$/;"	m	struct:Pool_
+LOGD	util-pool.h	39;"	d
+LOGD	util-pool.h	42;"	d
+LOGE	util-pool.h	33;"	d
+POOLMUTEX_INITIALIZER	util-pool-thread.h	39;"	d
+POOL_BUCKET_PREALLOCATED	util-pool.h	57;"	d
+Pool	util-pool.h	/^} Pool;$/;"	t	typeref:struct:Pool_
+PoolBucket	util-pool.h	/^} PoolBucket;$/;"	t	typeref:struct:PoolBucket_
+PoolBucket_	util-pool.h	/^typedef struct PoolBucket_ {$/;"	s
+PoolDataPreAllocated	util-pool.c	/^static int PoolDataPreAllocated(Pool *p, void *data)$/;"	f	file:
+PoolFree	util-pool.c	/^void PoolFree(Pool *p)$/;"	f
+PoolGet	util-pool.c	/^void *PoolGet(Pool *p)$/;"	f
+PoolInit	util-pool.c	/^Pool *PoolInit(uint32_t size, uint32_t prealloc_size, uint32_t elt_size,$/;"	f
+PoolMemset	util-pool.c	/^static int PoolMemset(void *pitem, void *initdata)$/;"	f	file:
+PoolMutex	util-pool-thread.h	32;"	d
+PoolMutexAttr	util-pool-thread.h	33;"	d
+PoolMutexDestroy	util-pool-thread.h	38;"	d
+PoolMutexInit	util-pool-thread.h	34;"	d
+PoolMutexLock	util-pool-thread.h	35;"	d
+PoolMutexTrylock	util-pool-thread.h	36;"	d
+PoolMutexUnlock	util-pool-thread.h	37;"	d
+PoolPrint	util-pool.c	/^void PoolPrint(Pool *p)$/;"	f
+PoolPrintSaturation	util-pool.c	/^void PoolPrintSaturation(Pool *p)$/;"	f
+PoolRegisterTests	util-pool.c	/^void PoolRegisterTests(void)$/;"	f
+PoolReturn	util-pool.c	/^void PoolReturn(Pool *p, void *data)$/;"	f
+PoolTestAlloc	util-pool.c	/^static void *PoolTestAlloc(void)$/;"	f	file:
+PoolTestFree	util-pool.c	/^static void PoolTestFree(void *ptr)$/;"	f	file:
+PoolTestInit01	util-pool.c	/^static int PoolTestInit01 (void)$/;"	f	file:
+PoolTestInit02	util-pool.c	/^static int PoolTestInit02 (void)$/;"	f	file:
+PoolTestInit03	util-pool.c	/^static int PoolTestInit03 (void)$/;"	f	file:
+PoolTestInit04	util-pool.c	/^static int PoolTestInit04 (void)$/;"	f	file:
+PoolTestInit05	util-pool.c	/^static int PoolTestInit05 (void)$/;"	f	file:
+PoolTestInit06	util-pool.c	/^static int PoolTestInit06 (void)$/;"	f	file:
+PoolTestInit07	util-pool.c	/^static int PoolTestInit07 (void)$/;"	f	file:
+PoolTestInitArg	util-pool.c	/^static int PoolTestInitArg(void *data, void *allocdata)$/;"	f	file:
+PoolThread	util-pool-thread.h	/^} PoolThread;$/;"	t	typeref:struct:PoolThread_
+PoolThreadElement	util-pool-thread.h	/^typedef struct PoolThreadElement_ PoolThreadElement;$/;"	t	typeref:struct:PoolThreadElement_
+PoolThreadElement_	util-pool-thread.h	/^struct PoolThreadElement_ {$/;"	s
+PoolThreadFree	util-pool-thread.c	/^void PoolThreadFree(PoolThread *pt)$/;"	f
+PoolThreadGetById	util-pool-thread.c	/^void *PoolThreadGetById(PoolThread *pt, uint16_t id)$/;"	f
+PoolThreadGrow	util-pool-thread.c	/^int PoolThreadGrow(PoolThread *pt, uint32_t size, uint32_t prealloc_size, uint32_t elt_size,  void *(*Alloc)(void), int (*Init)(void *, void *), void *InitData,  void (*Cleanup)(void *), void (*Free)(void *)) {$/;"	f
+PoolThreadInit	util-pool-thread.c	/^PoolThread *PoolThreadInit(int threads, uint32_t size, uint32_t prealloc_size, uint32_t elt_size,  void *(*Alloc)(void), int (*Init)(void *, void *), void *InitData,  void (*Cleanup)(void *), void (*Free)(void *))$/;"	f
+PoolThreadRegisterTests	util-pool-thread.c	/^void PoolThreadRegisterTests(void)$/;"	f
+PoolThreadReserved	util-pool-thread.h	/^typedef uint16_t PoolThreadReserved;$/;"	t
+PoolThreadReturn	util-pool-thread.c	/^void PoolThreadReturn(PoolThread *pt, void *data)$/;"	f
+PoolThreadSize	util-pool-thread.c	/^int PoolThreadSize(PoolThread *pt)$/;"	f
+PoolThreadTestAlloc	util-pool-thread.c	/^static void *PoolThreadTestAlloc(void)$/;"	f	file:
+PoolThreadTestData	util-pool-thread.c	/^struct PoolThreadTestData {$/;"	s	file:
+PoolThreadTestFree	util-pool-thread.c	/^void PoolThreadTestFree(void *data)$/;"	f	file:
+PoolThreadTestGet01	util-pool-thread.c	/^static int PoolThreadTestGet01(void)$/;"	f	file:
+PoolThreadTestGet02	util-pool-thread.c	/^static int PoolThreadTestGet02(void)$/;"	f	file:
+PoolThreadTestGrow01	util-pool-thread.c	/^static int PoolThreadTestGrow01(void)$/;"	f	file:
+PoolThreadTestGrow02	util-pool-thread.c	/^static int PoolThreadTestGrow02(void)$/;"	f	file:
+PoolThreadTestGrow03	util-pool-thread.c	/^static int PoolThreadTestGrow03(void)$/;"	f	file:
+PoolThreadTestInit	util-pool-thread.c	/^int PoolThreadTestInit(void *data, void *allocdata)$/;"	f	file:
+PoolThreadTestInit01	util-pool-thread.c	/^static int PoolThreadTestInit01(void)$/;"	f	file:
+PoolThreadTestInit02	util-pool-thread.c	/^static int PoolThreadTestInit02(void)$/;"	f	file:
+PoolThreadTestReturn01	util-pool-thread.c	/^static int PoolThreadTestReturn01(void)$/;"	f	file:
+PoolThread_	util-pool-thread.h	/^typedef struct PoolThread_ {$/;"	s
+Pool_	util-pool.h	/^typedef struct Pool_ {$/;"	s
+_QGH_PRINTF	util-pool.h	31;"	d
+__UTIL_POOL_H__	util-pool.h	25;"	d
+__UTIL_POOL_THREAD_H__	util-pool-thread.h	28;"	d
+abc	util-pool-thread.c	/^    int abc;$/;"	m	struct:PoolThreadTestData	file:
+alloc_stack	util-pool.h	/^    PoolBucket *alloc_stack;$/;"	m	struct:Pool_
+alloc_stack_size	util-pool.h	/^    uint32_t alloc_stack_size;$/;"	m	struct:Pool_
+allocated	util-pool.h	/^    uint32_t allocated;         \/**< counter of data elements, both currently in$/;"	m	struct:Pool_
+array	util-pool-thread.h	/^    PoolThreadElement *array;       \/**< array of elements *\/$/;"	m	struct:PoolThread_
+data	util-pool.h	/^    void *data;$/;"	m	struct:PoolBucket_
+data_buffer	util-pool.h	/^    void *data_buffer;$/;"	m	struct:Pool_
+data_buffer_size	util-pool.h	/^    int data_buffer_size;$/;"	m	struct:Pool_
+elt_size	util-pool.h	/^    uint32_t elt_size;$/;"	m	struct:Pool_
+empty_stack	util-pool.h	/^    PoolBucket *empty_stack;$/;"	m	struct:Pool_
+empty_stack_size	util-pool.h	/^    uint32_t empty_stack_size;$/;"	m	struct:Pool_
+flags	util-pool.h	/^    uint8_t flags;$/;"	m	struct:PoolBucket_
+likely	util-pool.h	50;"	d
+lock	util-pool-thread.h	/^    PoolMutex lock;                   \/**< lock, should have low contention *\/$/;"	m	struct:PoolThreadElement_
+max_buckets	util-pool.h	/^    uint32_t max_buckets;$/;"	m	struct:Pool_
+max_outstanding	util-pool.h	/^    uint32_t max_outstanding;   \/**< max value of outstanding we saw *\/$/;"	m	struct:Pool_
+next	util-pool.h	/^    struct PoolBucket_ *next;$/;"	m	struct:PoolBucket_	typeref:struct:PoolBucket_::PoolBucket_
+outstanding	util-pool.h	/^    uint32_t outstanding;       \/**< counter of data items 'in use'. Pretty much$/;"	m	struct:Pool_
+pb_buffer	util-pool.h	/^    PoolBucket *pb_buffer;$/;"	m	struct:Pool_
+pool	util-pool-thread.h	/^    Pool *pool;                     \/**< actual pool *\/$/;"	m	struct:PoolThreadElement_
+preallocated	util-pool.h	/^    uint32_t preallocated;$/;"	m	struct:Pool_
+res	util-pool-thread.c	/^    PoolThreadReserved res;$/;"	m	struct:PoolThreadTestData	file:
+size	util-pool-thread.h	/^    size_t size;                    \/**< size of the array *\/$/;"	m	struct:PoolThread_
+unlikely	util-pool.h	53;"	d
