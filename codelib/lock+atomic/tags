@@ -1,0 +1,102 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ATOMIC16_INIT	atomic.h	76;"	d
+ATOMIC32_INIT	atomic.h	329;"	d
+ATOMIC64_INIT	atomic.h	581;"	d
+FORCE_INTRINSICS	atomic.h	14;"	d
+RWLOCK_INITIALIZER	rwlock.h	48;"	d
+SPINLOCK_INITIALIZER	spinlock.h	44;"	d
+SPINLOCK_RECURSIVE_INITIALIZER	spinlock.h	186;"	d
+_ATOMIC_H_	atomic.h	2;"	d
+_RWLOCK_H_	rwlock.h	2;"	d
+_SPINLOCK_H_	spinlock.h	2;"	d
+atomic16_add	atomic.h	/^atomic16_add(atomic16_t *v, int16_t inc)$/;"	f
+atomic16_add_return	atomic.h	/^atomic16_add_return(atomic16_t *v, int16_t inc)$/;"	f
+atomic16_clear	atomic.h	/^static inline void atomic16_clear(atomic16_t *v)$/;"	f
+atomic16_cmpset	atomic.h	/^atomic16_cmpset(volatile uint16_t *dst, uint16_t exp, uint16_t src)$/;"	f
+atomic16_dec	atomic.h	/^atomic16_dec(atomic16_t *v)$/;"	f
+atomic16_dec_and_test	atomic.h	/^static inline int atomic16_dec_and_test(atomic16_t *v)$/;"	f
+atomic16_inc	atomic.h	/^atomic16_inc(atomic16_t *v)$/;"	f
+atomic16_inc_and_test	atomic.h	/^static inline int atomic16_inc_and_test(atomic16_t *v)$/;"	f
+atomic16_init	atomic.h	/^atomic16_init(atomic16_t *v)$/;"	f
+atomic16_read	atomic.h	/^atomic16_read(const atomic16_t *v)$/;"	f
+atomic16_set	atomic.h	/^atomic16_set(atomic16_t *v, int16_t new_value)$/;"	f
+atomic16_sub	atomic.h	/^atomic16_sub(atomic16_t *v, int16_t dec)$/;"	f
+atomic16_sub_return	atomic.h	/^atomic16_sub_return(atomic16_t *v, int16_t dec)$/;"	f
+atomic16_t	atomic.h	/^} atomic16_t;$/;"	t	typeref:struct:__anon1
+atomic16_test_and_set	atomic.h	/^static inline int atomic16_test_and_set(atomic16_t *v)$/;"	f
+atomic32_add	atomic.h	/^atomic32_add(atomic32_t *v, int32_t inc)$/;"	f
+atomic32_add_return	atomic.h	/^atomic32_add_return(atomic32_t *v, int32_t inc)$/;"	f
+atomic32_clear	atomic.h	/^static inline void atomic32_clear(atomic32_t *v)$/;"	f
+atomic32_cmpset	atomic.h	/^atomic32_cmpset(volatile uint32_t *dst, uint32_t exp, uint32_t src)$/;"	f
+atomic32_dec	atomic.h	/^atomic32_dec(atomic32_t *v)$/;"	f
+atomic32_dec_and_test	atomic.h	/^static inline int atomic32_dec_and_test(atomic32_t *v)$/;"	f
+atomic32_inc	atomic.h	/^atomic32_inc(atomic32_t *v)$/;"	f
+atomic32_inc_and_test	atomic.h	/^static inline int atomic32_inc_and_test(atomic32_t *v)$/;"	f
+atomic32_init	atomic.h	/^atomic32_init(atomic32_t *v)$/;"	f
+atomic32_read	atomic.h	/^atomic32_read(const atomic32_t *v)$/;"	f
+atomic32_set	atomic.h	/^atomic32_set(atomic32_t *v, int32_t new_value)$/;"	f
+atomic32_sub	atomic.h	/^atomic32_sub(atomic32_t *v, int32_t dec)$/;"	f
+atomic32_sub_return	atomic.h	/^atomic32_sub_return(atomic32_t *v, int32_t dec)$/;"	f
+atomic32_t	atomic.h	/^} atomic32_t;$/;"	t	typeref:struct:__anon2
+atomic32_test_and_set	atomic.h	/^static inline int atomic32_test_and_set(atomic32_t *v)$/;"	f
+atomic64_add	atomic.h	/^atomic64_add(atomic64_t *v, int64_t inc)$/;"	f
+atomic64_add_return	atomic.h	/^atomic64_add_return(atomic64_t *v, int64_t inc)$/;"	f
+atomic64_clear	atomic.h	/^static inline void atomic64_clear(atomic64_t *v)$/;"	f
+atomic64_cmpset	atomic.h	/^atomic64_cmpset(volatile uint64_t *dst, uint64_t exp, uint64_t src)$/;"	f
+atomic64_dec	atomic.h	/^atomic64_dec(atomic64_t *v)$/;"	f
+atomic64_dec_and_test	atomic.h	/^static inline int atomic64_dec_and_test(atomic64_t *v)$/;"	f
+atomic64_inc	atomic.h	/^atomic64_inc(atomic64_t *v)$/;"	f
+atomic64_inc_and_test	atomic.h	/^static inline int atomic64_inc_and_test(atomic64_t *v)$/;"	f
+atomic64_init	atomic.h	/^atomic64_init(atomic64_t *v)$/;"	f
+atomic64_read	atomic.h	/^atomic64_read(atomic64_t *v)$/;"	f
+atomic64_set	atomic.h	/^atomic64_set(atomic64_t *v, int64_t new_value)$/;"	f
+atomic64_sub	atomic.h	/^atomic64_sub(atomic64_t *v, int64_t dec)$/;"	f
+atomic64_sub_return	atomic.h	/^atomic64_sub_return(atomic64_t *v, int64_t dec)$/;"	f
+atomic64_t	atomic.h	/^} atomic64_t;$/;"	t	typeref:struct:__anon3
+atomic64_test_and_set	atomic.h	/^static inline int atomic64_test_and_set(atomic64_t *v)$/;"	f
+barrier	atomic.h	23;"	d
+barrier	atomic.h	27;"	d
+cnt	atomic.h	/^	volatile int16_t cnt; \/**< An internal counter value. *\/$/;"	m	struct:__anon1
+cnt	atomic.h	/^	volatile int32_t cnt; \/**< An internal counter value. *\/$/;"	m	struct:__anon2
+cnt	atomic.h	/^	volatile int64_t cnt;  \/**< Internal counter value. *\/$/;"	m	struct:__anon3
+cnt	rwlock.h	/^	volatile int32_t cnt; \/**< -1 when W lock held, > 0 when R locks held. *\/$/;"	m	struct:__anon6
+count	main.c	/^int count;$/;"	v
+count	spinlock.h	/^    volatile int count; \/**< count of time this lock has been called *\/$/;"	m	struct:__anon5
+lock	main.c	/^spinlock_t lock;$/;"	v
+locked	spinlock.h	/^    volatile int locked; \/**< lock status 0 = unlocked, 1 = locked *\/$/;"	m	struct:__anon4
+main	main.c	/^int main()$/;"	f
+mb	atomic.h	33;"	d
+pause	rwlock.h	/^static inline void pause(void)$/;"	f
+pause_r	spinlock.h	/^static inline void pause_r(void)$/;"	f
+rmb	atomic.h	34;"	d
+rte_rwlock_init	rwlock.h	/^rte_rwlock_init(rte_rwlock_t *rwl)$/;"	f
+rte_rwlock_read_lock	rwlock.h	/^rte_rwlock_read_lock(rte_rwlock_t *rwl)$/;"	f
+rte_rwlock_read_unlock	rwlock.h	/^rte_rwlock_read_unlock(rte_rwlock_t *rwl)$/;"	f
+rte_rwlock_t	rwlock.h	/^} rte_rwlock_t;$/;"	t	typeref:struct:__anon6
+rte_rwlock_write_lock	rwlock.h	/^rte_rwlock_write_lock(rte_rwlock_t *rwl)$/;"	f
+rte_rwlock_write_unlock	rwlock.h	/^rte_rwlock_write_unlock(rte_rwlock_t *rwl)$/;"	f
+sl	spinlock.h	/^    spinlock_t sl; \/**< the actual spinlock *\/$/;"	m	struct:__anon5
+smp_mb	atomic.h	30;"	d
+smp_rmb	atomic.h	31;"	d
+smp_wmb	atomic.h	32;"	d
+spinlock_init	spinlock.h	/^spinlock_init(spinlock_t *sl)$/;"	f
+spinlock_is_locked	spinlock.h	/^spinlock_is_locked (spinlock_t *sl)$/;"	f
+spinlock_lock	spinlock.h	/^spinlock_lock(spinlock_t *sl)$/;"	f
+spinlock_recursive_init	spinlock.h	/^void spinlock_recursive_init(spinlock_recursive_t *slr)$/;"	f
+spinlock_recursive_lock	spinlock.h	/^void spinlock_recursive_lock(spinlock_recursive_t *slr)$/;"	f
+spinlock_recursive_t	spinlock.h	/^} spinlock_recursive_t;$/;"	t	typeref:struct:__anon5
+spinlock_recursive_trylock	spinlock.h	/^int spinlock_recursive_trylock(spinlock_recursive_t *slr)$/;"	f
+spinlock_recursive_unlock	spinlock.h	/^void spinlock_recursive_unlock(spinlock_recursive_t *slr)$/;"	f
+spinlock_t	spinlock.h	/^} spinlock_t;$/;"	t	typeref:struct:__anon4
+spinlock_trylock	spinlock.h	/^spinlock_trylock (spinlock_t *sl)$/;"	f
+spinlock_unlock	spinlock.h	/^spinlock_unlock (spinlock_t *sl)$/;"	f
+sys_gettid	spinlock.h	/^int sys_gettid(void)                                                                        $/;"	f
+thread1	main.c	/^void *thread1(void *arg)$/;"	f
+thread2	main.c	/^void *thread2(void *arg)$/;"	f
+user	spinlock.h	/^    volatile int user; \/**< core id using lock, -1 for unused *\/$/;"	m	struct:__anon5
+wmb	atomic.h	35;"	d

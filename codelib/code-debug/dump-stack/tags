@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BT_SIZE	debug.c	38;"	d	file:
+CMD_SIZE	debug.c	39;"	d	file:
+DEBUG_FILE	debug.c	43;"	d	file:
+LIBDEBUG_H	debug.h	23;"	d
+_GNU_SOURCE	debug.c	23;"	d	file:
+__DEBUG__	debug.c	41;"	d	file:
+backtrace_handler	debug.c	/^static void backtrace_handler(int sig_num, siginfo_t *info, void *ucontext)$/;"	f	file:
+backtrace_symbols_detail	debug.c	/^static void backtrace_symbols_detail(void *array[], int size)$/;"	f	file:
+debug_backtrace_dump	debug.c	/^void debug_backtrace_dump(void)$/;"	f
+debug_backtrace_init	debug.c	/^int debug_backtrace_init(void)$/;"	f
+debug_signal_handler	debug.c	/^static void debug_signal_handler(int signo, siginfo_t *siginfo, void *ucontext)$/;"	f	file:
+debug_signals_init	debug.c	/^int debug_signals_init(void)$/;"	f
+f1	debug.c	/^int f1()$/;"	f
+f2	debug.c	/^int f2()$/;"	f
+f3	debug.c	/^void f3()$/;"	f
+get_uc_mcontext_pc	debug.c	/^static void *get_uc_mcontext_pc(ucontext_t *uc)$/;"	f	file:
+main	debug.c	/^int main(int argc, char *argv[])$/;"	f
+signals_all	debug.c	/^static int signals_all[] = {$/;"	v	file:
+signals_trace	debug.c	/^static int signals_trace[] =$/;"	v	file:

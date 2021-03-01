@@ -1,0 +1,121 @@
+#include <stdarg.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#include "errors.h"
+
+#if defined THREADSAFE && (defined __unix__ || defined __unix)
+#include <pthread.h>
+static pthread_key_t error_data_key;
+static pthread_once_t error_data_key_once = PTHREAD_ONCE_INIT;
+
+static void make_error_data_key()
+{
+    pthread_key_create(&error_data_key, free);
+}
+#endif
+
+/* 4K should be enough, right? */
+#define AVRO_ERROR_SIZE 4096
+
+/*
+ * To support the avro_prefix_error function, we keep two string buffers
+ * around.  The AVRO_CURRENT_ERROR points at the buffer that's holding
+ * the current error message.  avro_prefix error writes into the other
+ * buffer, and then swaps them.
+ */
+
+struct avro_error_data_t {
+    char  AVRO_ERROR1[AVRO_ERROR_SIZE];
+    char  AVRO_ERROR2[AVRO_ERROR_SIZE];
+
+    char  *AVRO_CURRENT_ERROR;
+    char  *AVRO_OTHER_ERROR;
+};
+
+
+static struct avro_error_data_t *
+avro_get_error_data(void)
+{
+#if defined THREADSAFE && (defined __unix__ || defined __unix)
+    pthread_once(&error_data_key_once, make_error_data_key);
+
+    struct avro_error_data_t *ERROR_DATA =
+        (struct avro_error_data_t*) pthread_getspecific(error_data_key);
+
+    if (!ERROR_DATA) {
+        ERROR_DATA = (struct avro_error_data_t*) malloc(sizeof(struct avro_error_data_t));
+        pthread_setspecific(error_data_key, ERROR_DATA);
+
+        ERROR_DATA->AVRO_ERROR1[0] = '\0';
+        ERROR_DATA->AVRO_ERROR2[0] = '\0';
+        ERROR_DATA->AVRO_CURRENT_ERROR = ERROR_DATA->AVRO_ERROR1;
+        ERROR_DATA->AVRO_OTHER_ERROR = ERROR_DATA->AVRO_ERROR2;
+    }
+
+    return ERROR_DATA;
+#else
+    static struct avro_error_data_t ERROR_DATA = {
+      /* .AVRO_ERROR1 = */ {'\0'},
+      /* .AVRO_ERROR2 = */ {'\0'},
+      /* .AVRO_CURRENT_ERROR = */ ERROR_DATA.AVRO_ERROR1,
+      /* .AVRO_OTHER_ERROR = */ ERROR_DATA.AVRO_ERROR2,
+    };
+
+    return &ERROR_DATA;
+#endif
+}
+
+
+void
+avro_set_error(const char *fmt, ...)
+{
+	va_list  args;
+	va_start(args, fmt);
+	vsnprintf(avro_get_error_data()->AVRO_CURRENT_ERROR, AVRO_ERROR_SIZE, fmt, args);
+	va_end(args);
+	//fprintf(stderr, "--- %s\n", AVRO_CURRENT_ERROR);
+}
+
+
+void
+avro_prefix_error(const char *fmt, ...)
+{
+    struct avro_error_data_t *ERROR_DATA = avro_get_error_data();
+
+	/*
+	 * First render the prefix into OTHER_ERROR.
+	 */
+
+	va_list  args;
+	va_start(args, fmt);
+	int  bytes_written = vsnprintf(ERROR_DATA->AVRO_OTHER_ERROR, AVRO_ERROR_SIZE, fmt, args);
+	va_end(args);
+
+	/*
+	 * Then concatenate the existing error onto the end.
+	 */
+
+	if (bytes_written < AVRO_ERROR_SIZE) {
+		strncpy(&ERROR_DATA->AVRO_OTHER_ERROR[bytes_written], ERROR_DATA->AVRO_CURRENT_ERROR,
+			AVRO_ERROR_SIZE - bytes_written);
+		ERROR_DATA->AVRO_OTHER_ERROR[AVRO_ERROR_SIZE-1] = '\0';
+	}
+
+	/*
+	 * Swap the two error pointers.
+	 */
+
+	char  *tmp;
+	tmp = ERROR_DATA->AVRO_OTHER_ERROR;
+	ERROR_DATA->AVRO_OTHER_ERROR = ERROR_DATA->AVRO_CURRENT_ERROR;
+	ERROR_DATA->AVRO_CURRENT_ERROR = tmp;
+	//fprintf(stderr, "+++ %s\n", AVRO_CURRENT_ERROR);
+}
+
+
+const char *avro_strerror(void)
+{
+	return avro_get_error_data()->AVRO_CURRENT_ERROR;
+
