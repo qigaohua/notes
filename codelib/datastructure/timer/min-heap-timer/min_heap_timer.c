@@ -172,7 +172,7 @@ int MinHeapAddNode(minheap_t *mp, void *data, unsigned long time_ms)
     // printf(">>>>>>>%s %d\n", mp->node_list[mp->lastindex].data, mp->node_list[mp->lastindex].time_ms);
 
     if (mp->lastindex <= 2) {
-        if (mp->node_list[mp->headindex].time_ms < time_ms)
+        if (mp->node_list[mp->headindex].time_ms > time_ms)
             swap(&mp->node_list[mp->headindex], last_node);
     }
     else {
@@ -429,7 +429,7 @@ int MinHeapTimerLoop(minheap_t *mp)
 
 
 #if 1
-#define TEST_NUM  20
+#define TEST_NUM  2
 
 unsigned long now_msecs;
 
@@ -522,26 +522,19 @@ int main(int argc, char *argv[])
     for (i = 0; i < TEST_NUM; i++) {
         int random = rand() % TEST_NUM;
         char *str = calloc(1, 20);
-        snprintf(str, 20, "%lu|%d", now_msecs + random * 1000, random);
+        snprintf(str, 20, "%lu|%d", now_msecs + random * 100, random);
 
         printf("== %u -> \"%s\"\n", random,  (char *)str);
-        MinHeapAddNode(mp, (void *)str, now_msecs + random * 1000);
+        MinHeapAddNode(mp, (void *)str, now_msecs + random * 100);
     }
 
     printf("==========================================\n");
 
-    pthread_t pid;
-    pthread_create(&pid, NULL, test_pthread, mp);
+    // 测试运行时多线程添加定时器
+    // pthread_t pid;
+    // pthread_create(&pid, NULL, test_pthread, mp);
 
     MinHeapTimerLoop(mp);
-
-    // void *str;
-    // uint64_t time_ms;
-    // for(i = 1; i < TEST_NUM + 2; i++) {
-    //     MinHeapDelNode(mp, &str, &time_ms);
-    //     printf("== %u -> \"%s\"\n", time_ms,  (char *)str);
-    // }
-    printf("\r\n");
 
     MinHeapDestroy(mp);
     return 0;
