@@ -236,8 +236,8 @@ int MinHeapAddNode(minheap_t *mp, void *data, unsigned long time_ms)
 #endif
 
     // 当添加的定时器到期时间最小时，发送命令
-    // if (time_ms == mp->node_list[mp->headindex].time_ms)
-    //     TellMinHeapTimer(CMD_ADD_NODE);
+    if (time_ms == mp->node_list[mp->headindex].time_ms)
+        TellMinHeapTimer(CMD_ADD_NODE);
 
     return 0;
 }
