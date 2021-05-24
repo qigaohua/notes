@@ -1,0 +1,19 @@
+target_bin: GHdns.o eloop.o log.o util.o
+	gcc -o target_bin GHdns.o eloop.o log.o util.o
+
+GHdns.o: GHdns.c GHdns.h
+	gcc -c GHdns.c
+
+eloop.o: eloop.c eloop.h
+	gcc -c eloop.c
+
+log.o: log.c log.h
+	gcc -c log.c
+
+util.o: util.c util.h
+	gcc -c util.c
+
+
+clean:
+	rm -rf *.o target_bin
+

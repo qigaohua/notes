@@ -1,0 +1,119 @@
+# 其实变量的定义有三种运算符=、:=、?=、+=
+# = 运算符可以读取到后面定义的变量
+# := 运算符在遇到变量定义时立即展开
+# ?= 运算符在复制之前先做判断变量是否已经存在。
+#  例如var1 ?= $(var2)的意思是：如果var1没有定义过，那么?=相当于=，如果var1先前已经定义了，则什么也不做，不会给var重新赋值
+# +=运算符是给变了追加值。如果变量还没有定义过就直接用+=赋值，那么+=相当于=
+#
+#有时在编译程序时，我们需要编译器给出警告，或加入调试信息，或告知编译器优化可执行文件。
+# 编译时C编译器的选项CFLAGS使用的较多，默认没有提供值，我们可以给该变量赋值。有时我们
+# 还需要使用链接器选项LFLAGS告诉链接器链接时需要的库文件。可能我们还需要给出包含头文件
+# 的路径，因为头文件很可能和源文件不再同一目录。
+#
+
+# CFLAGS CPPFLAGS 是内部变量，编译时自动加上，还有个TARGET_ARCH
+# CFLAGS += -g -Wall -O2
+# CPPFLAGS += -I./
+
+# # LDFALGS 这个是自己定义的，后面要加上$(LDFALGS)
+# LDFALGS += -lpthread
+
+
+# SRC=$(wildcard *.c)
+# SRC_OBJ=$(SRC:.c=.o)
+
+# SRC_BIN=target_bin
+
+# $(SRC_BIN): $(SRC_OBJ)
+# 	$(CC) -o $@ $^ $(LDFALGS)
+
+# clean:
+# 	$(RM) $(SRC_OBJ) $(SRC_BIN)
+
+#之前
+#####################################################
+#之后
+
+
+#一般情况下，Makefile都会有一个clean目标，用于清除编译过程中产生的二进制文件。
+# 我们在第一节的Makefile就用到了这个 clean目标，该目标没有任何依赖文件，并且
+# 该目标对应的命令执行后不会生产clean文件。
+# 像这种特点目标，它的规则所定义的命令不是去创建文件，而仅仅通过make指定目标
+# 来执行一些特定系统命令或其依赖为目标的规则（如all），称为伪目标。
+
+# 一个Makefile一般都不会只有一个伪目标，如果按Makefile的“潜规则”以及其约定俗
+# 成的名字来说的话，在较大的项目的Makefile中比较常用的为目标有这些：
+# all：执行主要的编译工作，通常用作缺省目标，放在最前面。
+# install：执行编译后的安装工作，把可执行文件、配置文件、文档等分别拷到不同的安装目录。
+# clean：删除编译生成的二进制文件。
+# distclean：删除除源文件之外的所有中间生成文件，如配置文件，文档等。
+# tags：为vim等编辑器生成tags文件。
+#help：打印当前Makefile的帮助信息，比如有哪些目标可以有make指定去执行等。
+#
+##
+
+# 完善下Makefile
+
+# CFLAGS CPPFLAGS 是内部变量，编译时自动加上，还有个TARGET_ARCH
+CFLAGS += -g -Wall -O2
+CPPFLAGS += -I./
+
+# LDFALGS 这个是自己定义的，后面要加上$(LDFALGS)
+LDFALGS += -lpthread
+
+
+SRC_FILES=$(wildcard *.c)
+SRC_OBJ=$(SRC_FILES:.c=.o)
+SRC_BIN=target_bin
+
+all: $(SRC_BIN)
+
+
+$(SRC_BIN): $(SRC_OBJ)
+	$(CC) -o $@ $^ $(LDFALGS)
+
+obj: $(SRC_OBJ)
+
+tags:
+	ctags -R
+
+help:
+	@echo "===============A common Makefile for cprograms=============="
+	@echo "Copyright (C) 2017 qigaohua168 @ 163 . com"
+	@echo "The following targets are support:"
+	@echo
+	@echo " all             - (==make) compile and link"
+	@echo " obj             - just compile, without link"
+	@echo " clean           - clean target"
+	@echo " distclean       - clean target and otherinformation"
+	@echo " tags            - create ctags for vim editor"
+	@echo " help            - print help information"
+	@echo
+	@echo "To make a target, do 'make [target]'"
+	@echo "========================= Version 1.1======================="
+
+clean:
+	$(RM) $(SRC_OBJ) $(SRC_BIN)
+
+disclean:
+	$(RM) $(SRC_OBJ) $(SRC_BIN) $(SRC_BIN).exe tags *~
+
+
+# 如果当前目录下存在一个和伪目标同名的文件时（如clean），此时如果执行
+# 命令make clean后出现如下结果：
+# make: `clean' is up to date.`
+# 这是因为clean文件没有依赖文件，make认为目标clean是最新的不会去执行规
+# 则对应的命令。为了解决这个问题，我们可以明确地将该目标声明为伪目标。
+# 将一个目标声明为伪目标需要将它作为特殊目标.PHONY”的依赖。如下：
+# .PHONY : clean
+
+# 完善Makefile
+.PHONY: all obj tag help clean disclean
+
+
+#####################################################
+#之后
+#请看Makefile_5
+
+
+

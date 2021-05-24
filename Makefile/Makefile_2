@@ -1,0 +1,45 @@
+target_bin: GHdns.o eloop.o log.o util.o
+	gcc -o target_bin GHdns.o eloop.o log.o util.o
+
+
+# 命令make –p可以打印出很多默认变量和隐含规则。Makefile变量可以理解为C语言的宏，直接展开即可（后面会讲到）。
+# 取出我们关心的部分：
+# # default
+# OUTPUT_OPTION = -o $@
+# # default
+# CC = cc
+# # default
+# COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) –c
+# # Implicit Rules
+# %.o: %.c
+# #  commands to execute (built-in):
+# >---$(COMPILE.c) $(OUTPUT_OPTION) $<
+#
+#
+# 其中cc是一个符号链接，指向gcc，这就可以解释为什么我们看到的编译输出为cc，其实还是使用gcc在编译
+#
+# 变量$(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH)都为空。所以%.o: %.c规则命令展开为：
+# cc    -c -o $@ $<
+# cc    -c -o main.o main.c // 屏幕中输出的其中一条
+#  $@和main.o对应，$<和main.c对应。其实 $@ 和 $< 是两个变量。
+#  $@ 为规则中的目标， $< 为规则中的第一个依赖文件。%.o:%.c 是一种称为模式规则的特殊规则。
+
+
+
+
+# GHdns.o: GHdns.c GHdns.h
+# 	gcc -c GHdns.c
+
+# eloop.o: eloop.c eloop.h
+# 	gcc -c eloop.c
+
+# log.o: log.c log.h
+# 	gcc -c log.c
+
+# util.o: util.c util.h
+# 	gcc -c util.c
+
+
+clean:
+	rm -rf *.o target_bin
+

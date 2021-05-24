@@ -1,8 +1,8 @@
 CC = gcc
 
-CFLAGS = -Wall -O2 -s
+CFLAGS = -Wall -O2 -s -D_DUBUG_
 
-#CFLAGS += -DDEBUG
+#CFLAGS += -D_DEBUG_
 
 OBJS = $(patsubst %.c,%.o,$(wildcard *.c))
 
@@ -13,7 +13,7 @@ MISSING_DEPS_SOURCES = $(wildcard $(patsubst %.d,%.c,$(MISSING_DEPS)))
 
 LIBS=-lpthread -L/usr/lib64/mysql -lmysqlclient
 
-TARGET=
+TARGET=Qdns
 
 all : $(TARGET)
 

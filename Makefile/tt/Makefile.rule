@@ -1,0 +1,80 @@
+
+
+MV = mv -f
+RM = rm -rf
+CP = cp -f
+
+
+# TOP_PATH = $(shell pwd)
+BUILD_DIR = $(TOP_DIR)/build
+
+# 生成的.o 文件目录，MODULE_NAME 是各个目录名，在各个模块Makefile中定义
+OBJ_PATH = $(BUILD_DIR)/obj/$(MODULE_NAME)
+# 生成的可执行文件目录
+BIN_PATH = $(BUILD_DIR)/bin/
+# 编译过程中生成的库
+BUILD_LIBS_PATH = $(BUILD_DIR)/libs/
+# 其他库
+LIB_PATH = $(TOP_PATH)/lib/
+SRC_PATH = $(TOP_PATH)/src/
+INC_PATH = $(TOP_PATH)/include/
+
+
+# 如果是在调试中
+ifeq ($(DEBUG_ING), TRUE)
+	CFLAGS += -g -Wall -Werror -O0
+else
+	CFLAGS += -Wall -Werror -O2
+endif
+
+
+ifeq ($(MAKELEVEL), 0)
+all: msg
+else
+all: $(APP) $(APP_LIB)
+endif
+
+
+ifneq ($(APP),)
+$(APP):$(SRC_OBJ)
+	$(CC) -o $@ $^ $(LDFLAGS)
+	@$(CP) $@ $(BIN_PATH)
+	@test -d OBJ_PATH || mkdir -p $(OBJ_PATH)
+	@$(CP) $^ $(OBJ_PATH)
+endif
+
+
+
+ifneq ($(APP_LIB),)
+$(APP_LIB):$(SRC_OBJ)
+	$(AR) rcs $@ $^
+	@$(CP) $@ $(BUILD_LIBS_PATH)
+	@test -d OBJ_PATH || mkdir -p $(OBJ_PATH)
+	@$(CP) $^ $(OBJ_PATH)
+endif
+
+
+obj: $(SRC_FILES)
+	$(CC) -c $^
+	@test -d OBJ_PATH || mkdir -p $(OBJ_PATH)
+	@$(CP) $@ $(OBJ_PATH)
+
+
+msg:
+	@echo "You cannot directily execute this Makefile! This Makefile should called by toplevel Makefile."
+
+
+tags:
+	ctags -R
+
+
+clean:
+	$(RM) $(SRC_OBJ) $(APP_LIB) $(APP)
+
+
+.PHONY: all clean msg obj tags
+
+
+
+
+

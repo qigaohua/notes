@@ -1,0 +1,114 @@
+# target_bin: GHdns.o eloop.o log.o util.o
+# 	gcc -o target_bin GHdns.o eloop.o log.o util.o
+
+# clean:
+# 	rm -rf *.o target_bin
+#之前
+#####################################################
+#之后
+
+# SRC_OBJ=GHdns.o eloop.o log.o util.o
+# SRC_BIN=target_bin
+
+# $(SRC_BIN): $(SRC_OBJ)
+# 	gcc -o $(SRC_BIN) $(SRC_OBJ)
+
+# clean:
+# 	rm -rf $(SRC_OBJ) $(SRC_BIN)
+
+
+#####################################################
+#之后
+
+
+#
+#$@ 表示规则中的目标。
+#$< 表示规则中的第一个依赖文件。
+#$? 表示规则中所有比目标新的条件，组成一个列表，以空格分隔。
+#$^ 表示规则中的所有条件，组成一个列表，以空格分隔。
+#make -p有很多自定义的变量，比如CC。
+#其中很多变量我们可以直接使用或修改其变量值或增加值。
+#我们的Makefile中可以使用CC（默认值为cc）、RM（默认值为rm -f）
+
+# SRC_OBJ=GHdns.o eloop.o log.o util.o
+# SRC_BIN=target_bin
+
+# $(SRC_BIN): $(SRC_OBJ)
+# 	$(CC) -o $@ $^
+
+# clean:
+# 	$(RM) $(SRC_OBJ) $(SRC_BIN)
+
+
+#####################################################
+#之后
+
+# 上面的Makefile还是需要我们手动添加文件，还是不够自动化，最好增删文件都要修改Makefile。
+# 于是乎，他们发明了一个函数wildcard（函数后面会讲到），它可以用来获取指定目录下的所有
+# 的.c文件列表。这样的话我们可以自动获取当前目录下所有.c源文件，然后通过其他方法再得到.o
+# 文件列表，这样的话就不需要在每次增删文件时去修改Makefile了。所谓其他方法这里给出两种：
+# 1. 使用patsubst函数。在$(patsubst %.c,%.o,$(dir) )中，patsubst把$(dir)中的变量符合后缀是.c的全部替换成.o。
+# 2. 变量值的替换。 我们可以替换变量中的共有的部分，其格式是“$(var:a=b)”或“${var:a=b}”，
+# 其意思是，把变量“var”中所有以“a”字串“结尾”的“a”替换成“b”字串。
+
+
+# SRC_OBJ=GHdns.o eloop.o log.o util.o
+
+# 1. SRC_OBJ=$(patsubst %.c,%.o,$(wildcard *.c))
+
+# SRC=$(wildcard *.c)
+# SRC_OBJ=$(SRC:.c=.o)
+
+# SRC_BIN=target_bin
+
+# $(SRC_BIN): $(SRC_OBJ)
+# 	$(CC) -o $@ $^
+
+# clean:
+# 	$(RM) $(SRC_OBJ) $(SRC_BIN)
+
+
+
+
+#####################################################
+#之后
+
+# 其实变量的定义有三种运算符=、:=、?=、+=
+# = 运算符可以读取到后面定义的变量
+# := 运算符在遇到变量定义时立即展开
+# ?= 运算符在复制之前先做判断变量是否已经存在。
+#  例如var1 ?= $(var2)的意思是：如果var1没有定义过，那么?=相当于=，如果var1先前已经定义了，则什么也不做，不会给var重新赋值
+# +=运算符是给变了追加值。如果变量还没有定义过就直接用+=赋值，那么+=相当于=
+#
+#有时在编译程序时，我们需要编译器给出警告，或加入调试信息，或告知编译器优化可执行文件。
+# 编译时C编译器的选项CFLAGS使用的较多，默认没有提供值，我们可以给该变量赋值。有时我们
+# 还需要使用链接器选项LFLAGS告诉链接器链接时需要的库文件。可能我们还需要给出包含头文件
+# 的路径，因为头文件很可能和源文件不再同一目录。
+#
+
+# CFLAGS CPPFLAGS 是内部变量，编译时自动加上，还有个TARGET_ARCH
+CFLAGS += -g -Wall -O2
+CPPFLAGS += -I./
+
+# LDFALGS 这个是自己定义的，后面要加上$(LDFALGS)
+LDFALGS += -lpthread
+
+
+SRC=$(wildcard *.c)
+SRC_OBJ=$(SRC:.c=.o)
+
+SRC_BIN=target_bin
+
+$(SRC_BIN): $(SRC_OBJ)
+	$(CC) -o $@ $^ $(LDFALGS)
+
+clean:
+	$(RM) $(SRC_OBJ) $(SRC_BIN)
+
+
+#####################################################
+#之后
+# 请看 Makefile_4
+
+
+
