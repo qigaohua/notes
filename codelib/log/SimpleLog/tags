@@ -1,0 +1,143 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BG_BLACK	log.h	66;"	d
+BG_BLUE	log.h	70;"	d
+BG_CYAN	log.h	72;"	d
+BG_GREEN	log.h	68;"	d
+BG_MAGENTA	log.h	71;"	d
+BG_RED	log.h	67;"	d
+BG_WHITE	log.h	73;"	d
+BG_YELLOW	log.h	69;"	d
+BLUE	log.h	53;"	d
+BLUE	log.h	84;"	d
+BUG_ON	log.h	249;"	d
+BUG_ON	log.h	258;"	d
+B_BLUE	log.h	46;"	d
+B_BLUE	log.h	77;"	d
+B_CYAN	log.h	48;"	d
+B_CYAN	log.h	79;"	d
+B_GREEN	log.h	44;"	d
+B_GREEN	log.h	75;"	d
+B_MAGENTA	log.h	47;"	d
+B_MAGENTA	log.h	78;"	d
+B_RED	log.h	43;"	d
+B_RED	log.h	74;"	d
+B_WHITE	log.h	49;"	d
+B_WHITE	log.h	80;"	d
+B_YELLOW	log.h	45;"	d
+B_YELLOW	log.h	76;"	d
+CYAN	log.h	55;"	d
+CYAN	log.h	86;"	d
+FG_BLACK	log.h	58;"	d
+FG_BLUE	log.h	62;"	d
+FG_CYAN	log.h	64;"	d
+FG_GREEN	log.h	60;"	d
+FG_MAGENTA	log.h	63;"	d
+FG_RED	log.h	59;"	d
+FG_WHITE	log.h	65;"	d
+FG_YELLOW	log.h	61;"	d
+GET_PID	log.h	99;"	d
+GET_TID	log.h	101;"	d
+GET_TID	log.h	103;"	d
+GREEN	log.h	51;"	d
+GREEN	log.h	82;"	d
+MAGENTA	log.h	54;"	d
+MAGENTA	log.h	85;"	d
+OUTBUFF_SIZE	log.h	108;"	d
+RED	log.h	50;"	d
+RED	log.h	81;"	d
+RUN_ON_DEBUG_MODE	log.h	242;"	d
+SLOG_FILE_MAXSIZE	log.h	109;"	d
+SLOG_FMT_DEFAULT	log.h	112;"	d
+SLOG_FMT_FILE	log.h	/^    SLOG_FMT_FILE  = 0x20,$/;"	e	enum:__anon3
+SLOG_FMT_FILE_ISSET	log.h	120;"	d
+SLOG_FMT_FUNC	log.h	/^    SLOG_FMT_FUNC  = 0x40,$/;"	e	enum:__anon3
+SLOG_FMT_FUNC_ISSET	log.h	121;"	d
+SLOG_FMT_LEVEL	log.h	/^    SLOG_FMT_LEVEL = 0x01,$/;"	e	enum:__anon3
+SLOG_FMT_LEVEL_ISSET	log.h	115;"	d
+SLOG_FMT_LINE	log.h	/^    SLOG_FMT_LINE  = 0x80$/;"	e	enum:__anon3
+SLOG_FMT_LINE_ISSET	log.h	122;"	d
+SLOG_FMT_PID	log.h	/^    SLOG_FMT_PID   = 0x08,$/;"	e	enum:__anon3
+SLOG_FMT_PID_ISSET	log.h	118;"	d
+SLOG_FMT_TAG	log.h	/^    SLOG_FMT_TAG   = 0x04,   \/\/ 标签，一般设置模块名称$/;"	e	enum:__anon3
+SLOG_FMT_TAG_ISSET	log.h	117;"	d
+SLOG_FMT_TID	log.h	/^    SLOG_FMT_TID   = 0x10,$/;"	e	enum:__anon3
+SLOG_FMT_TID_ISSET	log.h	119;"	d
+SLOG_FMT_TIME	log.h	/^    SLOG_FMT_TIME  = 0x02,$/;"	e	enum:__anon3
+SLOG_FMT_TIME_ISSET	log.h	116;"	d
+SLOG_LEVEL	log.h	187;"	d
+SLOG_LEVEL_ASSERT	log.h	/^    SLOG_LEVEL_ASSERT = 0,$/;"	e	enum:__anon2
+SLOG_LEVEL_DEBUG	log.h	/^    SLOG_LEVEL_DEBUG$/;"	e	enum:__anon2
+SLOG_LEVEL_DEFAULT	log.h	113;"	d
+SLOG_LEVEL_ERROR	log.h	/^    SLOG_LEVEL_ERROR,$/;"	e	enum:__anon2
+SLOG_LEVEL_INFO	log.h	/^    SLOG_LEVEL_INFO,$/;"	e	enum:__anon2
+SLOG_LEVEL_WARN	log.h	/^    SLOG_LEVEL_WARN,$/;"	e	enum:__anon2
+SLOG_MOUDLE_LOG_FILTER_SIZE	log.c	290;"	d	file:
+SLOG_MOUDLE_TAG	log.h	190;"	d
+SLOG_MOUDLE_TAG	test/example.c	10;"	d	file:
+SLOG_MOUDLE_TAG	test/module1.c	5;"	d	file:
+SLOG_MOUDLE_TAG	test/module2.c	5;"	d	file:
+SLOG_OUTPUT_ENABLE	log.h	186;"	d
+SLOG_SAVEFILE_MAXCOUNT	log.h	110;"	d
+SLogFmt_e	log.h	/^} SLogFmt_e;$/;"	t	typeref:enum:__anon3
+SLoger	log.h	/^typedef struct SLoger {$/;"	s
+SLogerAddLogFile	log.c	/^static void SLogerAddLogFile(const char *newfile)$/;"	f	file:
+SLogerCleanLogfile	log.c	/^static void SLogerCleanLogfile(int retain)$/;"	f	file:
+SLogerDeinit	log.c	/^void SLogerDeinit()$/;"	f
+SLogerGetCurTimestr	log.c	/^static inline void SLogerGetCurTimestr(char *timestr, size_t len)$/;"	f	file:
+SLogerGetError	log.c	/^char *SLogerGetError(void)$/;"	f
+SLogerGetFileSize	log.c	/^static int SLogerGetFileSize(FILE *fp)$/;"	f	file:
+SLogerInit	log.c	/^int SLogerInit(int level, int logfmt, const char *logfile)$/;"	f
+SLogerLevel_e	log.h	/^} SLogerLevel_e;$/;"	t	typeref:enum:__anon2
+SLogerOut	log.c	/^int SLogerOut(const char *tag, int level, const char *file,$/;"	f
+SLogerOutCache	log.c	/^int SLogerOutCache(const char *errmsg)$/;"	f
+SLogerSaveLogFile	log.c	/^static int SLogerSaveLogFile(FILE *fp)$/;"	f	file:
+SLogerSetMouldeLogFilterTag	log.c	/^int SLogerSetMouldeLogFilterTag(const char *tag, SLogerLevel_e level)$/;"	f
+SLoger_e	log.c	43;"	d	file:
+SLoger_t	log.h	/^} SLoger_t;$/;"	t	typeref:struct:SLoger
+WHITE	log.h	56;"	d
+WHITE	log.h	87;"	d
+YELLOW	log.h	52;"	d
+YELLOW	log.h	83;"	d
+__MODULE1_H_	test/module1.h	2;"	d
+__MODULE2_H_	test/module2.h	2;"	d
+__SLOG_H__	log.h	35;"	d
+color	log.c	/^    const char *color;$/;"	m	struct:__anon1	file:
+fmt	log.h	/^    int  fmt;$/;"	m	struct:SLoger
+fp	log.h	/^    FILE *fp;$/;"	m	struct:SLoger
+level	log.h	/^    SLogerLevel_e level;$/;"	m	struct:SLoger
+logdir	log.h	/^    char *logdir;$/;"	m	struct:SLoger
+logfile	log.h	/^    char *logfile;$/;"	m	struct:SLoger
+main	test/example.c	/^int main(int argc, char *argv[])$/;"	f
+module1	test/module1.c	/^int module1()$/;"	f
+module2	test/module2.c	/^int module2()$/;"	f
+moudle_log_filter	log.h	/^    char *moudle_log_filter;$/;"	m	struct:SLoger
+mutex	log.h	/^    pthread_mutex_t mutex;$/;"	m	struct:SLoger
+sLoger	log.c	/^static SLoger_t *sLoger;$/;"	v	file:
+save_logfile_array	log.h	/^    char *save_logfile_array[SLOG_SAVEFILE_MAXCOUNT];$/;"	m	struct:SLoger
+save_logfile_cnt	log.h	/^    int save_logfile_cnt;  \/\/ 备份的文件数量$/;"	m	struct:SLoger
+slog_a	log.h	237;"	d
+slog_assert	log.h	222;"	d
+slog_assert	log.h	227;"	d
+slog_cache_buf	log.c	/^static char slog_cache_buf[OUTBUFF_SIZE];$/;"	v	file:
+slog_d	log.h	245;"	d
+slog_d	log.h	257;"	d
+slog_debug	log.h	198;"	d
+slog_debug	log.h	231;"	d
+slog_e	log.h	238;"	d
+slog_error	log.h	216;"	d
+slog_error	log.h	228;"	d
+slog_level_str	log.c	/^} slog_level_str[] = {$/;"	v	typeref:struct:__anon1
+slog_m	log.h	240;"	d
+slog_msg	log.h	204;"	d
+slog_msg	log.h	230;"	d
+slog_w	log.h	239;"	d
+slog_warn	log.h	210;"	d
+slog_warn	log.h	229;"	d
+str	log.c	/^    const char *str;$/;"	m	struct:__anon1	file:
+str	log.h	247;"	d
+xstr	log.h	248;"	d
