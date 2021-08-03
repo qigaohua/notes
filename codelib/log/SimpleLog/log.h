@@ -1,5 +1,5 @@
 /*
- * This file is part of the SampleLoger .
+ * This file is part of the SimpleLoger .
  *
  * Copyright (c) 2017-2099, GaoHua Qi, <qigaohua168@163.com>
  *
@@ -24,7 +24,7 @@
  *
  *
  * @file log.h
- * @brief   SampleLoger 头文件
+ * @brief   SimpleLoger 头文件
  * @author qigaohua, qigaohua168@163.com
  * @version 01.022
  * @date 2021-08-03

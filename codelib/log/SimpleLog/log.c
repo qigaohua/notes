@@ -1,5 +1,5 @@
 /*
- * This file is part of the SampleLoger .
+ * This file is part of the SimpleLoger .
  *
  * Copyright (c) 2017-2099, GaoHua Qi, <qigaohua168@163.com>
  *
@@ -23,7 +23,7 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  * @file log.c
- * @brief   SampleLoger 初始化和其他api实现c文件
+ * @brief   SimpleLoger 初始化和其他api实现c文件
  * @author qigaohua, qigaohua168@163.com
  * @version 01.022
  * @date 2021-08-03
@@ -289,7 +289,7 @@ int SLogerSetMouldeLogFilterTag(const char *tag, SLogerLevel_e level)
 {
 #define SLOG_MOUDLE_LOG_FILTER_SIZE     512
     if (!sLoger) {
-        SLoger_e( "SampleLoger must be init, you should be use slog_init()");
+        SLoger_e( "SimpleLoger must be init, you should be use slog_init()");
         return -1;
     }
 
@@ -345,7 +345,7 @@ int SLogerOut(const char *tag, int level, const char *file,
         const char *func, const int line, const char *fmt,  ...)
 {
     if (!sLoger) {
-        SLoger_e( "SampleLoger must be init, you should be use slog_init()");
+        SLoger_e( "SimpleLoger must be init, you should be use slog_init()");
         return -1;
     }
     if (sLoger->level < level) return 0;
